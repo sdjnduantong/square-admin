@@ -1,23 +1,23 @@
 <script setup lang="ts">
-import type { Recordable } from '@vben/types';
+import type { Recordable } from '@tni/types';
 
-import type { VbenFormSchema } from '@vben-core/form-ui';
+import type { TniFormSchema } from '@tni-core/form-ui';
 
 import type { AuthenticationProps } from './types';
 
 import { computed, onMounted, reactive, ref } from 'vue';
 import { useRouter } from 'vue-router';
 
-import { $t } from '@vben/locales';
+import { $t } from '@tni/locales';
 
-import { useVbenForm } from '@vben-core/form-ui';
-import { VbenButton, VbenCheckbox } from '@vben-core/shadcn-ui';
+import { useTniForm } from '@tni-core/form-ui';
+import { TniButton, TniCheckbox } from '@tni-core/shadcn-ui';
 
 import Title from './auth-title.vue';
 import ThirdPartyLogin from './third-party-login.vue';
 
 interface Props extends AuthenticationProps {
-  formSchema?: VbenFormSchema[];
+  formSchema?: TniFormSchema[];
 }
 
 defineOptions({
@@ -46,7 +46,7 @@ const emit = defineEmits<{
   submit: [Recordable<any>];
 }>();
 
-const [Form, formApi] = useVbenForm(
+const [Form, formApi] = useTniForm(
   reactive({
     commonConfig: {
       hideLabel: true,
@@ -115,24 +115,24 @@ defineExpose({
       class="mb-6 flex justify-between"
     >
       <div class="flex-center">
-        <VbenCheckbox
+        <TniCheckbox
           v-if="showRememberMe"
           v-model="rememberMe"
           name="rememberMe"
         >
           {{ $t('authentication.rememberMe') }}
-        </VbenCheckbox>
+        </TniCheckbox>
       </div>
 
       <span
         v-if="showForgetPassword"
-        class="vben-link text-sm font-normal"
+        class="tni-link text-sm font-normal"
         @click="handleGo(forgetPasswordPath)"
       >
         {{ $t('authentication.forgetPassword') }}
       </span>
     </div>
-    <VbenButton
+    <TniButton
       :class="{
         'cursor-wait': loading,
       }"
@@ -142,28 +142,28 @@ defineExpose({
       @click="handleSubmit"
     >
       {{ submitButtonText || $t('common.login') }}
-    </VbenButton>
+    </TniButton>
 
     <div
       v-if="showCodeLogin || showQrcodeLogin"
       class="mt-4 mb-2 flex items-center justify-between"
     >
-      <VbenButton
+      <TniButton
         v-if="showCodeLogin"
         class="w-1/2"
         variant="outline"
         @click="handleGo(codeLoginPath)"
       >
         {{ $t('authentication.mobileLogin') }}
-      </VbenButton>
-      <VbenButton
+      </TniButton>
+      <TniButton
         v-if="showQrcodeLogin"
         class="ml-4 w-1/2"
         variant="outline"
         @click="handleGo(qrCodeLoginPath)"
       >
         {{ $t('authentication.qrcodeLogin') }}
-      </VbenButton>
+      </TniButton>
     </div>
 
     <!-- 第三方登录 -->
@@ -175,7 +175,7 @@ defineExpose({
       <div v-if="showRegister" class="mt-3 text-center text-sm">
         {{ $t('authentication.accountTip') }}
         <span
-          class="vben-link text-sm font-normal"
+          class="tni-link text-sm font-normal"
           @click="handleGo(registerPath)"
         >
           {{ $t('authentication.createAccount') }}

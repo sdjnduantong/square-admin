@@ -1,4 +1,4 @@
-export { default as VbenDropdownMenu } from './dropdown-menu.vue';
-export { default as VbenDropdownRadioMenu } from './dropdown-radio-menu.vue';
+export { default as TniDropdownMenu } from './dropdown-menu.vue';
+export { default as TniDropdownRadioMenu } from './dropdown-radio-menu.vue';
 
 export type * from './interface';

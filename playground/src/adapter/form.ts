@@ -1,15 +1,12 @@
-import type {
-  VbenFormSchema as FormSchema,
-  VbenFormProps,
-} from '@vben/common-ui';
+import type { TniFormSchema as FormSchema, TniFormProps } from '@tni/common-ui';
 
 import type { ComponentType } from './component';
 
-import { setupVbenForm, useVbenForm as useForm, z } from '@vben/common-ui';
-import { $t } from '@vben/locales';
+import { setupTniForm, useTniForm as useForm, z } from '@tni/common-ui';
+import { $t } from '@tni/locales';
 
-async function initSetupVbenForm() {
-  setupVbenForm<ComponentType>({
+async function initSetupTniForm() {
+  setupTniForm<ComponentType>({
     config: {
       // ant design vue组件库默认都是 v-model:value
       baseModelPropName: 'value',
@@ -40,8 +37,8 @@ async function initSetupVbenForm() {
   });
 }
 
-const useVbenForm = useForm<ComponentType>;
+const useTniForm = useForm<ComponentType>;
 
-export { initSetupVbenForm, useVbenForm, z };
-export type VbenFormSchema = FormSchema<ComponentType>;
-export type { VbenFormProps };
+export { initSetupTniForm, useTniForm, z };
+export type TniFormSchema = FormSchema<ComponentType>;
+export type { TniFormProps };

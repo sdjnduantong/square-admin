@@ -1,9 +1,10 @@
 <script setup lang="ts">
-import type { SelectOption } from '@vben/types';
+import type { SelectOption } from '@tni/types';
 
 import { computed } from 'vue';
 
-import { $t } from '@vben/locales';
+import { SUPPORT_LANGUAGES } from '@tni/constants';
+import { $t } from '@tni/locales';
 
 import SelectItem from '../select-item.vue';
 import SwitchItem from '../switch-item.vue';
@@ -47,7 +48,10 @@ const positionItems = computed((): SelectOption[] => [
   <SwitchItem v-model="widgetThemeToggle">
     {{ $t('preferences.widget.themeToggle') }}
   </SwitchItem>
-  <SwitchItem v-model="widgetLanguageToggle">
+  <SwitchItem
+    v-if="SUPPORT_LANGUAGES.length > 1"
+    v-model="widgetLanguageToggle"
+  >
     {{ $t('preferences.widget.languageToggle') }}
   </SwitchItem>
   <SwitchItem v-model="widgetFullscreen">

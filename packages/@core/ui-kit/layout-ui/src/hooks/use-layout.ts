@@ -1,10 +1,10 @@
-import type { LayoutType } from '@vben-core/typings';
+import type { LayoutType } from '@tni-core/typings';
 
-import type { VbenLayoutProps } from '../vben-layout';
+import type { TniLayoutProps } from '../tni-layout';
 
 import { computed } from 'vue';
 
-export function useLayout(props: VbenLayoutProps) {
+export function useLayout(props: TniLayoutProps) {
   const currentLayout = computed(() =>
     props.isMobile ? 'sidebar-nav' : (props.layout as LayoutType),
   );

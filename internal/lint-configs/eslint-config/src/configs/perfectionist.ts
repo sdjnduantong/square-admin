@@ -24,13 +24,13 @@ export async function perfectionist(): Promise<Linter.Config[]> {
             customGroups: [
               {
                 selector: 'type',
-                groupName: 'vben-core-type',
-                elementNamePattern: '^@vben-core/.+',
+                groupName: 'tni-core-type',
+                elementNamePattern: '^@tni-core/.+',
               },
               {
                 selector: 'type',
-                groupName: 'vben-type',
-                elementNamePattern: '^@vben/.+',
+                groupName: 'tni-type',
+                elementNamePattern: '^@tni/.+',
               },
               {
                 selector: 'type',
@@ -38,12 +38,12 @@ export async function perfectionist(): Promise<Linter.Config[]> {
                 elementNamePattern: ['^vue$', '^vue-.+', '^@vue/.+'],
               },
               {
-                groupName: 'vben',
-                elementNamePattern: '^@vben/.+',
+                groupName: 'tni',
+                elementNamePattern: '^@tni/.+',
               },
               {
-                groupName: 'vben-core',
-                elementNamePattern: '^@vben-core/.+',
+                groupName: 'tni-core',
+                elementNamePattern: '^@tni-core/.+',
               },
               {
                 groupName: 'vue',
@@ -54,14 +54,14 @@ export async function perfectionist(): Promise<Linter.Config[]> {
             groups: [
               ['type-external', 'type-builtin', 'type-import'],
               'vue-type',
-              'vben-type',
-              'vben-core-type',
+              'tni-type',
+              'tni-core-type',
               ['type-parent', 'type-sibling', 'type-index'],
               ['type-internal'],
               'value-builtin',
               'vue',
-              'vben',
-              'vben-core',
+              'tni',
+              'tni-core',
               'value-external',
               'value-internal',
               ['value-parent', 'value-sibling', 'value-index'],

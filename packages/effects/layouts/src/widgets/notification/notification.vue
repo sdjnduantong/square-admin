@@ -3,15 +3,15 @@ import type { NotificationItem } from './types';
 
 import { useRouter } from 'vue-router';
 
-import { Bell, CircleCheckBig, CircleX, MailCheck } from '@vben/icons';
-import { $t } from '@vben/locales';
+import { Bell, CircleCheckBig, CircleX, MailCheck } from '@tni/icons';
+import { $t } from '@tni/locales';
 
 import {
-  VbenButton,
-  VbenIconButton,
-  VbenPopover,
-  VbenScrollbar,
-} from '@vben-core/shadcn-ui';
+  TniButton,
+  TniIconButton,
+  TniPopover,
+  TniScrollbar,
+} from '@tni-core/shadcn-ui';
 
 import { useToggle } from '@vueuse/core';
 
@@ -87,31 +87,31 @@ function navigateTo(
 }
 </script>
 <template>
-  <VbenPopover v-model:open="open" content-class="relative right-2 w-90 p-0">
+  <TniPopover v-model:open="open" content-class="relative right-2 w-90 p-0">
     <template #trigger>
       <div class="mr-2 flex-center h-full" @click.stop="toggle()">
-        <VbenIconButton class="bell-button relative text-foreground">
+        <TniIconButton class="bell-button relative text-foreground">
           <span
             v-if="dot"
             class="absolute top-0.5 right-0.5 size-2 rounded-sm bg-primary"
           ></span>
           <Bell class="size-4" />
-        </VbenIconButton>
+        </TniIconButton>
       </div>
     </template>
 
     <div class="relative">
       <div class="flex items-center justify-between p-4 py-3">
         <div class="text-foreground">{{ $t('ui.widgets.notifications') }}</div>
-        <VbenIconButton
+        <TniIconButton
           :disabled="notifications.length <= 0"
           :tooltip="$t('ui.widgets.markAllAsRead')"
           @click="handleMakeAll"
         >
           <MailCheck class="size-4" />
-        </VbenIconButton>
+        </TniIconButton>
       </div>
-      <VbenScrollbar v-if="notifications.length > 0">
+      <TniScrollbar v-if="notifications.length > 0">
         <ul class="flex! max-h-90 w-full flex-col">
           <template v-for="item in notifications" :key="item.id ?? item.title">
             <li
@@ -143,7 +143,7 @@ function navigateTo(
               <div
                 class="absolute top-1/2 right-3 flex -translate-y-1/2 flex-col gap-2"
               >
-                <VbenIconButton
+                <TniIconButton
                   v-if="!item.isRead"
                   size="xs"
                   variant="ghost"
@@ -152,8 +152,8 @@ function navigateTo(
                   @click.stop="emit('read', item)"
                 >
                   <CircleCheckBig class="size-4" />
-                </VbenIconButton>
-                <VbenIconButton
+                </TniIconButton>
+                <TniIconButton
                   v-if="item.isRead"
                   size="xs"
                   variant="ghost"
@@ -162,12 +162,12 @@ function navigateTo(
                   @click.stop="emit('remove', item)"
                 >
                   <CircleX class="size-4" />
-                </VbenIconButton>
+                </TniIconButton>
               </div>
             </li>
           </template>
         </ul>
-      </VbenScrollbar>
+      </TniScrollbar>
 
       <template v-else>
         <div class="flex-center min-h-37.5 w-full text-muted-foreground">
@@ -178,20 +178,20 @@ function navigateTo(
       <div
         class="flex items-center justify-between border-t border-border px-4 py-3"
       >
-        <VbenButton
+        <TniButton
           :disabled="notifications.length <= 0"
           size="sm"
           variant="ghost"
           @click="handleClear"
         >
           {{ $t('ui.widgets.clearNotifications') }}
-        </VbenButton>
-        <VbenButton size="sm" @click="handleViewAll">
+        </TniButton>
+        <TniButton size="sm" @click="handleViewAll">
           {{ $t('ui.widgets.viewAll') }}
-        </VbenButton>
+        </TniButton>
       </div>
     </div>
-  </VbenPopover>
+  </TniPopover>
 </template>
 
 <style scoped>

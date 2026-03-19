@@ -31,10 +31,10 @@
 
 ```bash [.env]
 # 应用标题
-VITE_APP_TITLE=Vben Admin
+VITE_APP_TITLE=Tni Admin
 
 # 应用命名空间，用于缓存、store等功能的前缀，确保隔离
-VITE_APP_NAMESPACE=vben-web-antd
+VITE_APP_NAMESPACE=tni-web-antd
 ```
 
 ```bash [.env.development]
@@ -63,7 +63,7 @@ VITE_INJECT_APP_LOADING=true
 VITE_BASE=/
 
 # 接口地址
-VITE_GLOB_API_URL=https://mock-napi.vben.pro/api
+VITE_GLOB_API_URL=https://mock-napi.tni.pro/api
 
 # 是否开启压缩，可以设置为 none, brotli, gzip
 VITE_COMPRESS=gzip
@@ -91,11 +91,11 @@ VITE_ARCHIVER=true
 `_app.config.js` 是一个动态配置文件，可以在项目构建之后，根据不同的环境动态修改配置。内容如下：
 
 ```ts
-window._VBEN_ADMIN_PRO_APP_CONF_ = {
-  VITE_GLOB_API_URL: 'https://mock-napi.vben.pro/api',
+window._TNI_ADMIN_PRO_APP_CONF_ = {
+  VITE_GLOB_API_URL: 'https://mock-napi.tni.pro/api',
 };
-Object.freeze(window._VBEN_ADMIN_PRO_APP_CONF_);
-Object.defineProperty(window, '_VBEN_ADMIN_PRO_APP_CONF_', {
+Object.freeze(window._TNI_ADMIN_PRO_APP_CONF_);
+Object.defineProperty(window, '_TNI_ADMIN_PRO_APP_CONF_', {
   configurable: false,
   writable: false,
 });
@@ -107,7 +107,7 @@ Object.defineProperty(window, '_VBEN_ADMIN_PRO_APP_CONF_', {
 
 ### 使用
 
-想要获取 `_app.config.js` 内的变量，需要使用`@vben/hooks`提供的 `useAppConfig`方法。
+想要获取 `_app.config.js` 内的变量，需要使用`@tni/hooks`提供的 `useAppConfig`方法。
 
 ```ts
 const { apiURL } = useAppConfig(import.meta.env, import.meta.env.PROD);
@@ -120,13 +120,13 @@ const { apiURL } = useAppConfig(import.meta.env, import.meta.env.PROD);
 - 首先在 `.env` 或者对应的开发环境配置文件内，新增需要可动态配置的变量，需要以 `VITE_GLOB_*` 开头的变量，如：
 
   ```bash
-  VITE_GLOB_OTHER_API_URL=https://mock-napi.vben.pro/other-api
+  VITE_GLOB_OTHER_API_URL=https://mock-napi.tni.pro/other-api
   ```
 
 - 在 `packages/types/global.d.ts`,新增对应的类型定义，如：
 
   ```ts
-  export interface VbenAdminProAppConfigRaw {
+  export interface TniAdminProAppConfigRaw {
     VITE_GLOB_API_URL: string;
     VITE_GLOB_OTHER_API_URL: string; // [!code ++]
   }
@@ -144,10 +144,10 @@ const { apiURL } = useAppConfig(import.meta.env, import.meta.env.PROD);
     env: Record<string, any>,
     isProduction: boolean,
   ): ApplicationConfig {
-    // 生产环境下，直接使用 window._VBEN_ADMIN_PRO_APP_CONF_ 全局变量
+    // 生产环境下，直接使用 window._TNI_ADMIN_PRO_APP_CONF_ 全局变量
     const config = isProduction
-      ? window._VBEN_ADMIN_PRO_APP_CONF_
-      : (env as VbenAdminProAppConfigRaw);
+      ? window._TNI_ADMIN_PRO_APP_CONF_
+      : (env as TniAdminProAppConfigRaw);
 
     const { VITE_GLOB_API_URL, VITE_GLOB_OTHER_API_URL } = config; // [!code ++]
 
@@ -179,8 +179,8 @@ const { otherApiURL } = useAppConfig(import.meta.env, import.meta.env.PROD);
 如果你找不到文档说明，可以尝试自己配置好以后，点击`复制偏好设置`，覆盖项目默认即可。配置文件位于应用目录下的`preferences.ts`，在这里，你可以覆盖框架默认的配置，实现自定义配置。
 
 ```ts
-import { useAppConfig } from '@vben/hooks';
-import { defineOverridesPreferences } from '@vben/preferences';
+import { useAppConfig } from '@tni/hooks';
+import { defineOverridesPreferences } from '@tni/preferences';
 
 /**
  * @description 项目配置文件
@@ -213,7 +213,7 @@ const defaultPreferences: Preferences = {
     contentPaddingRight: 0,
     contentPaddingTop: 0,
     defaultAvatar:
-      'https://unpkg.com/@vbenjs/static-source@0.1.7/source/avatar-v1.webp',
+      'https://unpkg.com/@tnijs/static-source@0.1.7/source/avatar-v1.webp',
     defaultHomePath: '/analytics',
     dynamicTitle: true,
     enableCheckUpdates: true,
@@ -224,7 +224,7 @@ const defaultPreferences: Preferences = {
     layout: 'sidebar-nav',
     locale: 'zh-CN',
     loginExpiredMode: 'page',
-    name: 'Vben Admin',
+    name: 'Tni Admin',
     preferencesButtonPosition: 'auto',
     watermark: false,
     zIndex: 200,
@@ -237,8 +237,8 @@ const defaultPreferences: Preferences = {
     styleType: 'normal',
   },
   copyright: {
-    companyName: 'Vben',
-    companySiteLink: 'https://www.vben.pro',
+    companyName: 'Tni',
+    companySiteLink: 'https://www.tni.pro',
     date: '2024',
     enable: true,
     icp: '',
@@ -260,8 +260,8 @@ const defaultPreferences: Preferences = {
   logo: {
     enable: true,
     fit: 'contain',
-    source: 'https://unpkg.com/@vbenjs/static-source@0.1.7/source/logo-v1.webp',
-    // sourceDark: 'https://unpkg.com/@vbenjs/static-source@0.1.7/source/logo-dark.webp', // 可选：暗色主题logo
+    source: 'https://unpkg.com/@tnijs/static-source@0.1.7/source/logo-v1.webp',
+    // sourceDark: 'https://unpkg.com/@tnijs/static-source@0.1.7/source/logo-dark.webp', // 可选：暗色主题logo
   },
   navigation: {
     accordion: true,

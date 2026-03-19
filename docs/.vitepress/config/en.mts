@@ -5,7 +5,7 @@ import { defineConfig } from 'vitepress';
 import { version } from '../../../package.json';
 
 export const en = defineConfig({
-  description: 'Vben Admin & Enterprise level management system framework',
+  description: 'Tni Admin & Enterprise level management system framework',
   lang: 'en-US',
   themeConfig: {
     darkModeSwitchLabel: 'Theme',
@@ -16,11 +16,11 @@ export const en = defineConfig({
     },
     editLink: {
       pattern:
-        'https://github.com/vbenjs/vue-vben-admin/edit/main/docs/src/:path',
+        'https://github.com/tnijs/vue-tni-admin/edit/main/docs/src/:path',
       text: 'Edit this page on GitHub',
     },
     footer: {
-      copyright: `Copyright © 2020-${new Date().getFullYear()} Vben`,
+      copyright: `Copyright © 2020-${new Date().getFullYear()} Tni`,
       message: 'Released under the MIT License.',
     },
     langMenuLabel: 'Language',
@@ -58,8 +58,8 @@ function sidebarGuide(): DefaultTheme.SidebarItem[] {
       text: 'Introduction',
       items: [
         {
-          link: 'introduction/vben',
-          text: 'About Vben Admin',
+          link: 'introduction/tni',
+          text: 'About Tni Admin',
         },
         {
           link: 'introduction/why',
@@ -167,35 +167,35 @@ function sidebarComponents(): DefaultTheme.SidebarItem[] {
       text: 'Common UI',
       items: [
         {
-          link: 'common-ui/vben-api-component',
+          link: 'common-ui/tni-api-component',
           text: 'ApiComponent',
         },
         {
-          link: 'common-ui/vben-alert',
+          link: 'common-ui/tni-alert',
           text: 'Alert',
         },
         {
-          link: 'common-ui/vben-modal',
+          link: 'common-ui/tni-modal',
           text: 'Modal',
         },
         {
-          link: 'common-ui/vben-drawer',
+          link: 'common-ui/tni-drawer',
           text: 'Drawer',
         },
         {
-          link: 'common-ui/vben-form',
+          link: 'common-ui/tni-form',
           text: 'Form',
         },
         {
-          link: 'common-ui/vben-vxe-table',
+          link: 'common-ui/tni-vxe-table',
           text: 'Vxe Table',
         },
         {
-          link: 'common-ui/vben-count-to-animator',
+          link: 'common-ui/tni-count-to-animator',
           text: 'CountToAnimator',
         },
         {
-          link: 'common-ui/vben-ellipsis-text',
+          link: 'common-ui/tni-ellipsis-text',
           text: 'EllipsisText',
         },
       ],
@@ -211,7 +211,7 @@ function nav(): DefaultTheme.NavItem[] {
       items: [
         {
           activeMatch: '^/en/guide/',
-          link: '/en/guide/introduction/vben',
+          link: '/en/guide/introduction/tni',
           text: 'Guide',
         },
         {
@@ -234,22 +234,22 @@ function nav(): DefaultTheme.NavItem[] {
       text: 'Demo',
       items: [
         {
-          text: 'Vben Admin',
+          text: 'Tni Admin',
           items: [
             {
-              link: 'https://www.vben.pro',
+              link: 'https://www.tni.pro',
               text: 'Demo Version',
             },
             {
-              link: 'https://ant.vben.pro',
+              link: 'https://ant.tni.pro',
               text: 'Ant Design Vue Version',
             },
             {
-              link: 'https://naive.vben.pro',
+              link: 'https://naive.tni.pro',
               text: 'Naive Version',
             },
             {
-              link: 'https://ele.vben.pro',
+              link: 'https://ele.tni.pro',
               text: 'Element Plus Version',
             },
           ],
@@ -258,8 +258,8 @@ function nav(): DefaultTheme.NavItem[] {
           text: 'Others',
           items: [
             {
-              link: 'https://vben.vvbin.cn',
-              text: 'Vben Admin 2.x',
+              link: 'https://tni.vvbin.cn',
+              text: 'Tni Admin 2.x',
             },
           ],
         },
@@ -269,15 +269,15 @@ function nav(): DefaultTheme.NavItem[] {
       text: version,
       items: [
         {
-          link: 'https://github.com/vbenjs/vue-vben-admin/releases',
+          link: 'https://github.com/tnijs/vue-tni-admin/releases',
           text: 'Changelog',
         },
         {
-          link: 'https://github.com/orgs/vbenjs/projects/5',
+          link: 'https://github.com/orgs/tnijs/projects/5',
           text: 'Roadmap',
         },
         {
-          link: 'https://github.com/vbenjs/vue-vben-admin/blob/main/.github/contributing.md',
+          link: 'https://github.com/tnijs/vue-tni-admin/blob/main/.github/contributing.md',
           text: 'Contribution',
         },
       ],

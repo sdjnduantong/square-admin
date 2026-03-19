@@ -1,12 +1,12 @@
 {
-  "name": "@vben/stylelint-config",
+  "name": "@tni/stylelint-config",
   "version": "5.7.0",
   "private": true,
-  "homepage": "https://github.com/vbenjs/vue-vben-admin",
-  "bugs": "https://github.com/vbenjs/vue-vben-admin/issues",
+  "homepage": "https://github.com/sdjnduantong/square-admin.git",
+  "bugs": "https://github.com/sdjnduantong/square-admin/issues",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/vbenjs/vue-vben-admin.git",
+    "url": "git+https://github.com/sdjnduantong/square-admin.git",
     "directory": "internal/lint-configs/stylelint-config"
   },
   "license": "MIT",
@@ -37,5 +37,10 @@
     "stylelint-config-recommended-vue": "catalog:",
     "stylelint-config-standard": "catalog:",
     "stylelint-order": "catalog:"
+  },
+  "author": {
+    "name": "duantong",
+    "email": "2664787866@qq.com",
+    "url": "https://github.com/sdjnduantong"
   }
 }

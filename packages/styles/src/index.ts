@@ -1,1 +1,1 @@
-import '@vben-core/design';
+import '@tni-core/design';

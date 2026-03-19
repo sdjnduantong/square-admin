@@ -5,17 +5,17 @@ import type { FormActions, FormSchema, MaybeComponentProps } from '../types';
 
 import { computed, nextTick, onUnmounted, useTemplateRef, watch } from 'vue';
 
-import { CircleAlert } from '@vben-core/icons';
+import { CircleAlert } from '@tni-core/icons';
 import {
   FormControl,
   FormDescription,
   FormField,
   FormItem,
   FormMessage,
-  VbenRenderContent,
-  VbenTooltip,
-} from '@vben-core/shadcn-ui';
-import { cn, isFunction, isObject, isString } from '@vben-core/shared/utils';
+  TniRenderContent,
+  TniTooltip,
+} from '@tni-core/shadcn-ui';
+import { cn, isFunction, isObject, isString } from '@tni-core/shared/utils';
 
 import { toTypedSchema } from '@vee-validate/zod';
 import { useFieldError, useFormValues } from 'vee-validate';
@@ -329,7 +329,7 @@ onUnmounted(() => {
         :style="labelStyle"
       >
         <template v-if="label">
-          <VbenRenderContent :content="label" />
+          <TniRenderContent :content="label" />
         </template>
       </FormLabel>
       <div class="flex-auto overflow-hidden p-px">
@@ -358,14 +358,14 @@ onUnmounted(() => {
                   :key="name"
                   #[name]="renderSlotProps"
                 >
-                  <VbenRenderContent
+                  <TniRenderContent
                     :content="customContentRender[name]"
                     v-bind="{ ...renderSlotProps, formContext: slotProps }"
                   />
                 </template>
                 <!-- <slot></slot> -->
               </component>
-              <VbenTooltip
+              <TniTooltip
                 v-if="compact && isInValid"
                 :delay-duration="300"
                 side="left"
@@ -382,16 +382,16 @@ onUnmounted(() => {
                   </slot>
                 </template>
                 <FormMessage />
-              </VbenTooltip>
+              </TniTooltip>
             </slot>
           </FormControl>
           <!-- 自定义后缀 -->
           <div v-if="suffix" class="ml-1">
-            <VbenRenderContent :content="suffix" />
+            <TniRenderContent :content="suffix" />
           </div>
         </div>
         <FormDescription v-if="description" class="text-xs">
-          <VbenRenderContent :content="description" />
+          <TniRenderContent :content="description" />
         </FormDescription>
 
         <Transition name="slide-up" v-if="!compact">

@@ -1,19 +1,19 @@
 <script lang="ts" setup>
-import type { VbenFormSchema } from '@vben/common-ui';
+import type { TniFormSchema } from '@tni/common-ui';
 
 import { computed, ref } from 'vue';
 
-import { AuthenticationForgetPassword, z } from '@vben/common-ui';
-import { $t } from '@vben/locales';
+import { AuthenticationForgetPassword, z } from '@tni/common-ui';
+import { $t } from '@tni/locales';
 
 defineOptions({ name: 'ForgetPassword' });
 
 const loading = ref(false);
 
-const formSchema = computed((): VbenFormSchema[] => {
+const formSchema = computed((): TniFormSchema[] => {
   return [
     {
-      component: 'VbenInput',
+      component: 'TniInput',
       componentProps: {
         placeholder: 'example@example.com',
       },

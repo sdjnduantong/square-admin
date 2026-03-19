@@ -21,7 +21,7 @@ In `global.css`, you will see the Tailwind CSS v4 directives currently used by t
 
 The project does not decide whether Tailwind CSS is enabled based on whether a package contains `tailwind.config.mjs`.
 
-Apps and packages share `@vben/vite-config`, which integrates `@tailwindcss/vite`. The Tailwind scan scope is managed centrally in `packages/@core/base/design/src/css/global.css`.
+Apps and packages share `@tni/vite-config`, which integrates `@tailwindcss/vite`. The Tailwind scan scope is managed centrally in `packages/@core/base/design/src/css/global.css`.
 
 ::: tip Notes on using Tailwind CSS in packages
 

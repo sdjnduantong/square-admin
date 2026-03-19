@@ -1,20 +1,20 @@
 <script lang="ts" setup>
 import type { Arrayable } from '@vueuse/core';
 
-import type { ValueType, VbenButtonGroupProps } from './button';
+import type { ValueType, TniButtonGroupProps } from './button';
 
 import { computed, ref, watch } from 'vue';
 
-import { Circle, CircleCheckBig, LoaderCircle } from '@vben-core/icons';
-import { cn, isFunction } from '@vben-core/shared/utils';
+import { Circle, CircleCheckBig, LoaderCircle } from '@tni-core/icons';
+import { cn, isFunction } from '@tni-core/shared/utils';
 
 import { objectOmit } from '@vueuse/core';
 
-import { VbenRenderContent } from '../render-content';
-import VbenButtonGroup from './button-group.vue';
+import { TniRenderContent } from '../render-content';
+import TniButtonGroup from './button-group.vue';
 import Button from './button.vue';
 
-const props = withDefaults(defineProps<VbenButtonGroupProps>(), {
+const props = withDefaults(defineProps<TniButtonGroupProps>(), {
   gap: 0,
   multiple: false,
   showIcon: true,
@@ -105,10 +105,10 @@ async function onBtnClick(value: ValueType) {
 }
 </script>
 <template>
-  <VbenButtonGroup
+  <TniButtonGroup
     :size="props.size"
     :gap="props.gap"
-    class="vben-check-button-group"
+    class="tni-check-button-group"
   >
     <Button
       v-for="(btn, index) in props.options"
@@ -139,13 +139,13 @@ async function onBtnClick(value: ValueType) {
         </slot>
       </div>
       <slot name="option" :label="btn.label" :value="btn.value" :data="btn">
-        <VbenRenderContent :content="btn.label" />
+        <TniRenderContent :content="btn.label" />
       </slot>
     </Button>
-  </VbenButtonGroup>
+  </TniButtonGroup>
 </template>
 <style lang="scss" scoped>
-.vben-check-button-group {
+.tni-check-button-group {
   display: flex;
   flex-wrap: wrap;
 

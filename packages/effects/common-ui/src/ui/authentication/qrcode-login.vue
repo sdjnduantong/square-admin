@@ -2,9 +2,9 @@
 import { ref } from 'vue';
 import { useRouter } from 'vue-router';
 
-import { $t } from '@vben/locales';
+import { $t } from '@tni/locales';
 
-import { VbenButton } from '@vben-core/shadcn-ui';
+import { TniButton } from '@tni-core/shadcn-ui';
 
 import { useQRCode } from '@vueuse/integrations/useQRCode';
 
@@ -57,7 +57,7 @@ const props = withDefaults(defineProps<Props>(), {
 
 const router = useRouter();
 
-const text = ref('https://vben.vvbin.cn');
+const text = ref('https://tni.vvbin.cn');
 
 const qrcode = useQRCode(text, {
   errorCorrectionLevel: 'H',
@@ -93,13 +93,13 @@ function goToLogin() {
       </p>
     </div>
 
-    <VbenButton
+    <TniButton
       v-if="showBack"
       class="mt-4 w-full"
       variant="outline"
       @click="goToLogin()"
     >
       {{ $t('common.back') }}
-    </VbenButton>
+    </TniButton>
   </div>
 </template>

@@ -7,8 +7,8 @@ import {
   confirm,
   Page,
   prompt,
-  useVbenModal,
-} from '@vben/common-ui';
+  useTniModal,
+} from '@tni/common-ui';
 
 import { Button, Card, Flex, message } from 'ant-design-vue';
 
@@ -25,41 +25,41 @@ import SharedDataDemo from './shared-data-demo.vue';
 
 defineOptions({ name: 'ModalExample' });
 
-const [BaseModal, baseModalApi] = useVbenModal({
+const [BaseModal, baseModalApi] = useTniModal({
   // 连接抽离的组件
   connectedComponent: BaseDemo,
 });
 
-const [InContentModal, inContentModalApi] = useVbenModal({
+const [InContentModal, inContentModalApi] = useTniModal({
   // 连接抽离的组件
   connectedComponent: InContentModalDemo,
 });
 
-const [AutoHeightModal, autoHeightModalApi] = useVbenModal({
+const [AutoHeightModal, autoHeightModalApi] = useTniModal({
   connectedComponent: AutoHeightDemo,
 });
 
-const [DragModal, dragModalApi] = useVbenModal({
+const [DragModal, dragModalApi] = useTniModal({
   connectedComponent: DragDemo,
 });
 
-const [DynamicModal, dynamicModalApi] = useVbenModal({
+const [DynamicModal, dynamicModalApi] = useTniModal({
   connectedComponent: DynamicDemo,
 });
 
-const [SharedDataModal, sharedModalApi] = useVbenModal({
+const [SharedDataModal, sharedModalApi] = useTniModal({
   connectedComponent: SharedDataDemo,
 });
 
-const [FormModal, formModalApi] = useVbenModal({
+const [FormModal, formModalApi] = useTniModal({
   connectedComponent: FormModalDemo,
 });
 
-const [NestedModal, nestedModalApi] = useVbenModal({
+const [NestedModal, nestedModalApi] = useTniModal({
   connectedComponent: NestedDemo,
 });
 
-const [BlurModal, blurModalApi] = useVbenModal({
+const [BlurModal, blurModalApi] = useTniModal({
   connectedComponent: BlurDemo,
 });
 
@@ -179,7 +179,7 @@ async function openPrompt() {
     title="弹窗组件示例"
   >
     <template #extra>
-      <DocButton path="/components/common-ui/vben-modal" />
+      <DocButton path="/components/common-ui/tni-modal" />
     </template>
     <BaseModal />
     <InContentModal />
@@ -264,7 +264,7 @@ async function openPrompt() {
       </Card>
       <Card class="w-75" title="轻量提示弹窗">
         <template #extra>
-          <DocButton path="/components/common-ui/vben-alert" />
+          <DocButton path="/components/common-ui/tni-alert" />
         </template>
         <p>通过快捷方法创建动态提示弹窗，适合一些轻量的提示和确认、输入等</p>
         <template #actions>

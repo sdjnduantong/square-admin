@@ -1,15 +1,15 @@
 <script lang="ts" setup>
-import { useVbenModal } from '@vben/common-ui';
+import { useTniModal } from '@tni/common-ui';
 
 import { message } from 'ant-design-vue';
 
-import { useVbenForm } from '#/adapter/form';
+import { useTniForm } from '#/adapter/form';
 
 defineOptions({
   name: 'FormModelDemo',
 });
 
-const [Form, formApi] = useVbenForm({
+const [Form, formApi] = useTniForm({
   handleSubmit: onSubmit,
   schema: [
     {
@@ -47,7 +47,7 @@ const [Form, formApi] = useVbenForm({
   showDefaultActions: false,
 });
 
-const [Modal, modalApi] = useVbenModal({
+const [Modal, modalApi] = useTniModal({
   fullscreenButton: false,
   onCancel() {
     modalApi.close();

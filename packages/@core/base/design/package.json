@@ -1,12 +1,12 @@
 {
-  "name": "@vben-core/design",
+  "name": "@tni-core/design",
   "version": "5.7.0",
-  "homepage": "https://github.com/vbenjs/vue-vben-admin",
-  "bugs": "https://github.com/vbenjs/vue-vben-admin/issues",
+  "homepage": "https://github.com/sdjnduantong/square-admin.git",
+  "bugs": "https://github.com/sdjnduantong/square-admin/issues",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/vbenjs/vue-vben-admin.git",
-    "directory": "packages/@vben-core/base/design"
+    "url": "git+https://github.com/sdjnduantong/square-admin.git",
+    "directory": "packages/@core/base/design"
   },
   "license": "MIT",
   "type": "module",
@@ -48,5 +48,10 @@
     "@iconify/tailwind4": "catalog:",
     "@tailwindcss/typography": "catalog:",
     "tw-animate-css": "catalog:"
+  },
+  "author": {
+    "name": "duantong",
+    "email": "2664787866@qq.com",
+    "url": "https://github.com/sdjnduantong"
   }
 }

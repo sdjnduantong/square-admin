@@ -1,1 +1,1 @@
-export { default as VbenFullScreen } from './full-screen.vue';
+export { default as TniFullScreen } from './full-screen.vue';

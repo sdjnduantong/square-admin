@@ -1,12 +1,12 @@
 {
-  "name": "@vben/tsconfig",
+  "name": "@tni/tsconfig",
   "version": "5.7.0",
   "private": true,
-  "homepage": "https://github.com/vbenjs/vue-vben-admin",
-  "bugs": "https://github.com/vbenjs/vue-vben-admin/issues",
+  "homepage": "https://github.com/sdjnduantong/square-admin.git",
+  "bugs": "https://github.com/sdjnduantong/square-admin/issues",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/vbenjs/vue-vben-admin.git",
+    "url": "git+https://github.com/sdjnduantong/square-admin.git",
     "directory": "internal/tsconfig"
   },
   "license": "MIT",
@@ -19,7 +19,12 @@
     "web.json"
   ],
   "dependencies": {
-    "@vben/types": "workspace:*",
+    "@tni/types": "workspace:*",
     "vite": "catalog:"
+  },
+  "author": {
+    "name": "duantong",
+    "email": "2664787866@qq.com",
+    "url": "https://github.com/sdjnduantong"
   }
 }

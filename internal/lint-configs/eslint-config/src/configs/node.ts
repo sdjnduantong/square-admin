@@ -18,7 +18,7 @@ export async function node(): Promise<Linter.Config[]> {
           {
             allowModules: [
               'tsdown',
-              '@vben/vite-config',
+              '@tni/vite-config',
               'vitest',
               'vite',
               '@vue/test-utils',

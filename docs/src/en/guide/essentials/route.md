@@ -66,7 +66,7 @@ The configuration method of static routes and dynamic routes is the same. Below 
 ```ts
 import type { RouteRecordRaw } from 'vue-router';
 
-import { VBEN_LOGO_URL } from '@vben/constants';
+import { TNI_LOGO_URL } from '@tni/constants';
 
 import { BasicLayout } from '#/layouts';
 import { $t } from '#/locales';
@@ -76,23 +76,23 @@ const routes: RouteRecordRaw[] = [
     meta: {
       badgeType: 'dot',
       badgeVariants: 'destructive',
-      icon: VBEN_LOGO_URL,
+      icon: TNI_LOGO_URL,
       order: 9999,
-      title: $t('page.vben.title'),
+      title: $t('page.tni.title'),
     },
-    name: 'VbenProject',
-    path: '/vben-admin',
-    redirect: '/vben-admin/about',
+    name: 'TniProject',
+    path: '/tni-admin',
+    redirect: '/tni-admin/about',
     children: [
       {
-        name: 'VbenAbout',
-        path: '/vben-admin/about',
+        name: 'TniAbout',
+        path: '/tni-admin/about',
         component: () => import('#/views/_core/about/index.vue'),
         meta: {
           badgeType: 'dot',
           badgeVariants: 'destructive',
           icon: 'lucide:copyright',
-          title: $t('page.vben.about'),
+          title: $t('page.tni.about'),
         },
       },
     ],
@@ -240,7 +240,7 @@ Add a route object in the corresponding route file, as follows:
 ```ts
 import type { RouteRecordRaw } from 'vue-router';
 
-import { VBEN_LOGO_URL } from '@vben/constants';
+import { TNI_LOGO_URL } from '@tni/constants';
 
 import { BasicLayout } from '#/layouts';
 import { $t } from '#/locales';
@@ -593,7 +593,7 @@ The route refresh method is as follows:
 
 ```vue
 <script setup lang="ts">
-import { useRefresh } from '@vben/hooks';
+import { useRefresh } from '@tni/hooks';
 
 const { refresh } = useRefresh();
 

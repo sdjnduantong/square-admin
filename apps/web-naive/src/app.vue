@@ -3,14 +3,12 @@ import type { GlobalThemeOverrides } from 'naive-ui';
 
 import { computed } from 'vue';
 
-import { useNaiveDesignTokens } from '@vben/hooks';
-import { preferences } from '@vben/preferences';
+import { useNaiveDesignTokens } from '@tni/hooks';
+import { preferences } from '@tni/preferences';
 
 import {
   darkTheme,
-  dateEnUS,
   dateZhCN,
-  enUS,
   lightTheme,
   NConfigProvider,
   NMessageProvider,
@@ -22,12 +20,8 @@ defineOptions({ name: 'App' });
 
 const { commonTokens } = useNaiveDesignTokens();
 
-const tokenLocale = computed(() =>
-  preferences.app.locale === 'zh-CN' ? zhCN : enUS,
-);
-const tokenDateLocale = computed(() =>
-  preferences.app.locale === 'zh-CN' ? dateZhCN : dateEnUS,
-);
+const tokenLocale = computed(() => zhCN);
+const tokenDateLocale = computed(() => dateZhCN);
 const tokenTheme = computed(() =>
   preferences.theme.mode === 'dark' ? darkTheme : lightTheme,
 );

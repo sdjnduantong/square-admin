@@ -1,12 +1,12 @@
-export { setupVbenForm } from './config';
+export { setupTniForm } from './config';
 
 export type {
   BaseFormComponentType,
   ExtendedFormApi,
-  VbenFormProps,
-  FormSchema as VbenFormSchema,
+  TniFormProps,
+  FormSchema as TniFormSchema,
 } from './types';
 
-export * from './use-vben-form';
-// export { default as VbenForm } from './vben-form.vue';
+export * from './use-tni-form';
+// export { default as TniForm } from './tni-form.vue';
 export * as z from 'zod';

@@ -1,12 +1,12 @@
 {
-  "name": "@vben-core/menu-ui",
+  "name": "@tni-core/menu-ui",
   "version": "5.7.0",
-  "homepage": "https://github.com/vbenjs/vue-vben-admin",
-  "bugs": "https://github.com/vbenjs/vue-vben-admin/issues",
+  "homepage": "https://github.com/sdjnduantong/square-admin.git",
+  "bugs": "https://github.com/sdjnduantong/square-admin/issues",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/vbenjs/vue-vben-admin.git",
-    "directory": "packages/@vben-core/uikit/menu-ui"
+    "url": "git+https://github.com/sdjnduantong/square-admin.git",
+    "directory": "packages/@core/ui-kit/menu-ui"
   },
   "license": "MIT",
   "type": "module",
@@ -40,17 +40,22 @@
     }
   },
   "dependencies": {
-    "@vben-core/composables": "workspace:*",
-    "@vben-core/design": "workspace:*",
-    "@vben-core/icons": "workspace:*",
-    "@vben-core/shadcn-ui": "workspace:*",
-    "@vben-core/shared": "workspace:*",
-    "@vben-core/typings": "workspace:*",
+    "@tni-core/composables": "workspace:*",
+    "@tni-core/design": "workspace:*",
+    "@tni-core/icons": "workspace:*",
+    "@tni-core/shadcn-ui": "workspace:*",
+    "@tni-core/shared": "workspace:*",
+    "@tni-core/typings": "workspace:*",
     "@vueuse/core": "catalog:",
     "qs": "catalog:",
     "vue": "catalog:"
   },
   "devDependencies": {
     "@types/qs": "catalog:"
+  },
+  "author": {
+    "name": "duantong",
+    "email": "2664787866@qq.com",
+    "url": "https://github.com/sdjnduantong"
   }
 }

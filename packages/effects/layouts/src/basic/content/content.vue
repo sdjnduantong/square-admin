@@ -4,8 +4,8 @@ import type { RouteLocationNormalizedLoadedGeneric } from 'vue-router';
 import { unref } from 'vue';
 import { RouterView } from 'vue-router';
 
-import { usePreferences } from '@vben/preferences';
-import { getTabKey, storeToRefs, useTabbarStore } from '@vben/stores';
+import { usePreferences } from '@tni/preferences';
+import { getTabKey, storeToRefs, useTabbarStore } from '@tni/stores';
 
 import { transformComponent, useLayoutHook } from '../../hooks';
 import { IFrameRouterView } from '../../iframe';

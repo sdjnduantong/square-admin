@@ -1,11 +1,11 @@
 {
-  "name": "@vben/hooks",
+  "name": "@tni/hooks",
   "version": "5.7.0",
-  "homepage": "https://github.com/vbenjs/vue-vben-admin",
-  "bugs": "https://github.com/vbenjs/vue-vben-admin/issues",
+  "homepage": "https://github.com/sdjnduantong/square-admin.git",
+  "bugs": "https://github.com/sdjnduantong/square-admin/issues",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/vbenjs/vue-vben-admin.git",
+    "url": "git+https://github.com/sdjnduantong/square-admin.git",
     "directory": "packages/effects/hooks"
   },
   "license": "MIT",
@@ -20,14 +20,19 @@
     }
   },
   "dependencies": {
-    "@vben-core/composables": "workspace:*",
-    "@vben/preferences": "workspace:*",
-    "@vben/stores": "workspace:*",
-    "@vben/types": "workspace:*",
-    "@vben/utils": "workspace:*",
+    "@tni-core/composables": "workspace:*",
+    "@tni/preferences": "workspace:*",
+    "@tni/stores": "workspace:*",
+    "@tni/types": "workspace:*",
+    "@tni/utils": "workspace:*",
     "@vueuse/core": "catalog:",
     "vue": "catalog:",
     "vue-router": "catalog:",
     "watermark-js-plus": "catalog:"
+  },
+  "author": {
+    "name": "duantong",
+    "email": "2664787866@qq.com",
+    "url": "https://github.com/sdjnduantong"
   }
 }

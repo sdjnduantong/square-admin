@@ -1,14 +1,14 @@
 <script setup lang="ts">
-import type { BuiltinThemeType } from '@vben/types';
+import type { BuiltinThemeType } from '@tni/types';
 
-import { Palette } from '@vben/icons';
+import { Palette } from '@tni/icons';
 import {
   COLOR_PRESETS,
   preferences,
   updatePreferences,
-} from '@vben/preferences';
+} from '@tni/preferences';
 
-import { VbenIconButton } from '@vben-core/shadcn-ui';
+import { TniIconButton } from '@tni-core/shadcn-ui';
 
 defineOptions({
   name: 'AuthenticationColorToggle',
@@ -30,7 +30,7 @@ function handleUpdate(colorPrimary: string, type: BuiltinThemeType) {
       class="flex w-0 overflow-hidden transition-all duration-500 ease-out group-hover:w-60"
     >
       <template v-for="preset in COLOR_PRESETS" :key="preset.color">
-        <VbenIconButton
+        <TniIconButton
           class="flex-center shrink-0"
           @click="handleUpdate(preset.color, preset.type)"
         >
@@ -53,12 +53,12 @@ function handleUpdate(colorPrimary: string, type: BuiltinThemeType) {
               />
             </svg>
           </div>
-        </VbenIconButton>
+        </TniIconButton>
       </template>
     </div>
 
-    <VbenIconButton>
+    <TniIconButton>
       <Palette class="size-4 text-primary" />
-    </VbenIconButton>
+    </TniIconButton>
   </div>
 </template>

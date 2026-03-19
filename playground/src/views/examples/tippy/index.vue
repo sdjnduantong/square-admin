@@ -1,13 +1,13 @@
 <script lang="ts" setup>
-import type { TippyProps } from '@vben/common-ui';
+import type { TippyProps } from '@tni/common-ui';
 
 import { reactive } from 'vue';
 
-import { Page, Tippy } from '@vben/common-ui';
+import { Page, Tippy } from '@tni/common-ui';
 
 import { Button, Card, Flex } from 'ant-design-vue';
 
-import { useVbenForm } from '#/adapter/form';
+import { useTniForm } from '#/adapter/form';
 
 const tippyProps = reactive<TippyProps>({
   animation: 'shift-away',
@@ -38,7 +38,7 @@ function parseBoolean(value: string) {
   }
 }
 
-const [Form] = useVbenForm({
+const [Form] = useTniForm({
   handleValuesChange(values) {
     Object.assign(tippyProps, {
       ...values,

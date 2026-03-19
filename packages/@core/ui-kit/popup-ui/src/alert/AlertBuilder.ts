@@ -1,14 +1,14 @@
 import type { Component, VNode } from 'vue';
 
-import type { Recordable } from '@vben-core/typings';
+import type { Recordable } from '@tni-core/typings';
 
 import type { AlertProps, BeforeCloseScope, PromptProps } from './alert';
 
 import { h, nextTick, ref, render } from 'vue';
 
-import { useSimpleLocale } from '@vben-core/composables';
-import { Input, VbenRenderContent } from '@vben-core/shadcn-ui';
-import { isFunction, isString } from '@vben-core/shared/utils';
+import { useSimpleLocale } from '@tni-core/composables';
+import { Input, TniRenderContent } from '@tni-core/shadcn-ui';
+import { isFunction, isString } from '@tni-core/shared/utils';
 
 import Alert from './alert.vue';
 
@@ -16,18 +16,18 @@ const alerts = ref<Array<{ container: HTMLElement; instance: Component }>>([]);
 
 const { $t } = useSimpleLocale();
 
-export function vbenAlert(options: AlertProps): Promise<void>;
-export function vbenAlert(
+export function tniAlert(options: AlertProps): Promise<void>;
+export function tniAlert(
   message: string,
   options?: Partial<AlertProps>,
 ): Promise<void>;
-export function vbenAlert(
+export function tniAlert(
   message: string,
   title?: string,
   options?: Partial<AlertProps>,
 ): Promise<void>;
 
-export function vbenAlert(
+export function tniAlert(
   arg0: AlertProps | string,
   arg1?: Partial<AlertProps> | string,
   arg2?: Partial<AlertProps>,
@@ -95,18 +95,18 @@ export function vbenAlert(
   });
 }
 
-export function vbenConfirm(options: AlertProps): Promise<void>;
-export function vbenConfirm(
+export function tniConfirm(options: AlertProps): Promise<void>;
+export function tniConfirm(
   message: string,
   options?: Partial<AlertProps>,
 ): Promise<void>;
-export function vbenConfirm(
+export function tniConfirm(
   message: string,
   title?: string,
   options?: Partial<AlertProps>,
 ): Promise<void>;
 
-export function vbenConfirm(
+export function tniConfirm(
   arg0: AlertProps | string,
   arg1?: Partial<AlertProps> | string,
   arg2?: Partial<AlertProps>,
@@ -116,20 +116,20 @@ export function vbenConfirm(
   };
   if (!arg1) {
     return isString(arg0)
-      ? vbenAlert(arg0, defaultProps)
-      : vbenAlert({ ...defaultProps, ...arg0 });
+      ? tniAlert(arg0, defaultProps)
+      : tniAlert({ ...defaultProps, ...arg0 });
   } else if (!arg2) {
     return isString(arg1)
-      ? vbenAlert(arg0 as string, arg1, defaultProps)
-      : vbenAlert(arg0 as string, { ...defaultProps, ...arg1 });
+      ? tniAlert(arg0 as string, arg1, defaultProps)
+      : tniAlert(arg0 as string, { ...defaultProps, ...arg1 });
   }
-  return vbenAlert(arg0 as string, arg1 as string, {
+  return tniAlert(arg0 as string, arg1 as string, {
     ...defaultProps,
     ...arg2,
   });
 }
 
-export async function vbenPrompt<T = any>(
+export async function tniPrompt<T = any>(
   options: PromptProps<T>,
 ): Promise<T | undefined> {
   const {
@@ -145,7 +145,7 @@ export async function vbenPrompt<T = any>(
   const modelValue = ref<T | undefined>(defaultValue);
   const inputComponentRef = ref<null | VNode>(null);
   const staticContents: Component[] = [
-    h(VbenRenderContent, { content, renderBr: true }),
+    h(TniRenderContent, { content, renderBr: true }),
   ];
 
   const modelPropName = _modelPropName || 'modelValue';
@@ -230,7 +230,7 @@ export async function vbenPrompt<T = any>(
     },
   };
 
-  await vbenConfirm(props);
+  await tniConfirm(props);
   return modelValue.value;
 }
 

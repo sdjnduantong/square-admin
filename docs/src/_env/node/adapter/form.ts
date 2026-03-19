@@ -1,4 +1,4 @@
-export const useVbenForm = () => {};
+export const useTniForm = () => {};
 export const z = {};
-export type VbenFormSchema = any;
-export type VbenFormProps = any;
+export type TniFormSchema = any;
+export type TniFormProps = any;

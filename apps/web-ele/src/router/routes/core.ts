@@ -1,7 +1,7 @@
 import type { RouteRecordRaw } from 'vue-router';
 
-import { LOGIN_PATH } from '@vben/constants';
-import { preferences } from '@vben/preferences';
+import { LOGIN_PATH } from '@tni/constants';
+import { preferences } from '@tni/preferences';
 
 import { $t } from '#/locales';
 

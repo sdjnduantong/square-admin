@@ -31,10 +31,10 @@ The rules are consistent with [Vite Env Variables and Modes](https://vitejs.dev/
 
 ```bash [.env]
 # Application title
-VITE_APP_TITLE=Vben Admin
+VITE_APP_TITLE=Tni Admin
 
 # Application namespace, used as a prefix for caching, store, etc., to ensure isolation
-VITE_APP_NAMESPACE=vben-web-antd
+VITE_APP_NAMESPACE=tni-web-antd
 ```
 
 ```bash [.env.development]
@@ -65,7 +65,7 @@ VITE_ARCHIVER=true
 VITE_BASE=/
 
 # API URL
-VITE_GLOB_API_URL=https://mock-napi.vben.pro/api
+VITE_GLOB_API_URL=https://mock-napi.tni.pro/api
 
 # Whether to enable compression, can be set to none, brotli, gzip
 VITE_COMPRESS=gzip
@@ -92,11 +92,11 @@ When executing `pnpm build` in the root directory of the monorepo, a `dist/_app.
 `_app.config.js` is a dynamic configuration file that allows for modifications to the configuration dynamically based on different environments after the project has been built. The content is as follows:
 
 ```ts
-window._VBEN_ADMIN_PRO_APP_CONF_ = {
-  VITE_GLOB_API_URL: 'https://mock-napi.vben.pro/api',
+window._TNI_ADMIN_PRO_APP_CONF_ = {
+  VITE_GLOB_API_URL: 'https://mock-napi.tni.pro/api',
 };
-Object.freeze(window._VBEN_ADMIN_PRO_APP_CONF_);
-Object.defineProperty(window, '_VBEN_ADMIN_PRO_APP_CONF_', {
+Object.freeze(window._TNI_ADMIN_PRO_APP_CONF_);
+Object.defineProperty(window, '_TNI_ADMIN_PRO_APP_CONF_', {
   configurable: false,
   writable: false,
 });
@@ -108,7 +108,7 @@ Object.defineProperty(window, '_VBEN_ADMIN_PRO_APP_CONF_', {
 
 ### Usage
 
-To access the variables inside `_app.config.js`, you need to use the `useAppConfig` method provided by `@vben/hooks`.
+To access the variables inside `_app.config.js`, you need to use the `useAppConfig` method provided by `@tni/hooks`.
 
 ```ts
 const { apiURL } = useAppConfig(import.meta.env, import.meta.env.PROD);
@@ -121,13 +121,13 @@ To add a new dynamically modifiable configuration item, simply follow the steps 
 - First, add the variable that needs to be dynamically configurable in the `.env` file or the corresponding development environment configuration file. The variable must start with `VITE_GLOB_*`, for example:
 
   ```bash
-  VITE_GLOB_OTHER_API_URL=https://mock-napi.vben.pro/other-api
+  VITE_GLOB_OTHER_API_URL=https://mock-napi.tni.pro/other-api
   ```
 
 - In `packages/types/global.d.ts`, add the corresponding type definition, such as:
 
   ```ts
-  export interface VbenAdminProAppConfigRaw {
+  export interface TniAdminProAppConfigRaw {
     VITE_GLOB_API_URL: string;
     VITE_GLOB_OTHER_API_URL: string; // [!code ++]
   }
@@ -145,10 +145,10 @@ To add a new dynamically modifiable configuration item, simply follow the steps 
     env: Record<string, any>,
     isProduction: boolean,
   ): ApplicationConfig {
-    // In production environment, directly use the window._VBEN_ADMIN_PRO_APP_CONF_ global variable
+    // In production environment, directly use the window._TNI_ADMIN_PRO_APP_CONF_ global variable
     const config = isProduction
-      ? window._VBEN_ADMIN_PRO_APP_CONF_
-      : (env as VbenAdminProAppConfigRaw);
+      ? window._TNI_ADMIN_PRO_APP_CONF_
+      : (env as TniAdminProAppConfigRaw);
 
     const { VITE_GLOB_API_URL, VITE_GLOB_OTHER_API_URL } = config; // [!code ++]
 
@@ -180,8 +180,8 @@ The project offers a wide range of preference settings for dynamically configuri
 If you cannot find documentation for a setting, you can try configuring it yourself and then click `Copy Preferences` to override the project defaults. The configuration file is located in the application directory under `preferences.ts`, where you can override the framework's default configurations to achieve custom settings.
 
 ```ts
-import { useAppConfig } from '@vben/hooks';
-import { defineOverridesPreferences } from '@vben/preferences';
+import { useAppConfig } from '@tni/hooks';
+import { defineOverridesPreferences } from '@tni/preferences';
 
 /**
  * @description Project configuration file
@@ -214,7 +214,7 @@ const defaultPreferences: Preferences = {
     contentPaddingRight: 0,
     contentPaddingTop: 0,
     defaultAvatar:
-      'https://unpkg.com/@vbenjs/static-source@0.1.7/source/avatar-v1.webp',
+      'https://unpkg.com/@tnijs/static-source@0.1.7/source/avatar-v1.webp',
     defaultHomePath: '/analytics',
     dynamicTitle: true,
     enableCheckUpdates: true,
@@ -225,7 +225,7 @@ const defaultPreferences: Preferences = {
     layout: 'sidebar-nav',
     locale: 'zh-CN',
     loginExpiredMode: 'page',
-    name: 'Vben Admin',
+    name: 'Tni Admin',
     preferencesButtonPosition: 'auto',
     watermark: false,
     zIndex: 200,
@@ -238,8 +238,8 @@ const defaultPreferences: Preferences = {
     styleType: 'normal',
   },
   copyright: {
-    companyName: 'Vben',
-    companySiteLink: 'https://www.vben.pro',
+    companyName: 'Tni',
+    companySiteLink: 'https://www.tni.pro',
     date: '2024',
     enable: true,
     icp: '',
@@ -261,8 +261,8 @@ const defaultPreferences: Preferences = {
   logo: {
     enable: true,
     fit: 'contain',
-    source: 'https://unpkg.com/@vbenjs/static-source@0.1.7/source/logo-v1.webp',
-    // sourceDark: 'https://unpkg.com/@vbenjs/static-source@0.1.7/source/logo-dark.webp', // Optional: Dark theme logo
+    source: 'https://unpkg.com/@tnijs/static-source@0.1.7/source/logo-v1.webp',
+    // sourceDark: 'https://unpkg.com/@tnijs/static-source@0.1.7/source/logo-dark.webp', // Optional: Dark theme logo
   },
   navigation: {
     accordion: true,

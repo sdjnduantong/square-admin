@@ -10,7 +10,7 @@ import {
   watchEffect,
 } from 'vue';
 
-import { VbenTooltip } from '@vben-core/shadcn-ui';
+import { TniTooltip } from '@tni-core/shadcn-ui';
 
 import { useElementSize } from '@vueuse/core';
 
@@ -184,7 +184,7 @@ function handleExpand() {
 </script>
 <template>
   <div>
-    <VbenTooltip
+    <TniTooltip
       :content-style="{
         ...tooltipOverlayStyle,
         maxWidth: `${defaultTooltipMaxWidth}px`,
@@ -220,7 +220,7 @@ function handleExpand() {
           <slot></slot>
         </div>
       </template>
-    </VbenTooltip>
+    </TniTooltip>
   </div>
 </template>
 

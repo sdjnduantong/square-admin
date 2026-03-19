@@ -1,12 +1,12 @@
 {
-  "name": "@vben/eslint-config",
+  "name": "@tni/eslint-config",
   "version": "5.7.0",
   "private": true,
-  "homepage": "https://github.com/vbenjs/vue-vben-admin",
-  "bugs": "https://github.com/vbenjs/vue-vben-admin/issues",
+  "homepage": "https://github.com/sdjnduantong/square-admin.git",
+  "bugs": "https://github.com/sdjnduantong/square-admin/issues",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/vbenjs/vue-vben-admin.git",
+    "url": "git+https://github.com/sdjnduantong/square-admin.git",
     "directory": "internal/lint-configs/eslint-config"
   },
   "license": "MIT",
@@ -30,7 +30,7 @@
     "@eslint/js": "catalog:",
     "@typescript-eslint/eslint-plugin": "catalog:",
     "@typescript-eslint/parser": "catalog:",
-    "@vben/oxlint-config": "workspace:*",
+    "@tni/oxlint-config": "workspace:*",
     "eslint": "catalog:",
     "eslint-plugin-jsonc": "catalog:",
     "eslint-plugin-n": "catalog:",
@@ -43,5 +43,10 @@
     "globals": "catalog:",
     "vue-eslint-parser": "catalog:",
     "yaml-eslint-parser": "catalog:"
+  },
+  "author": {
+    "name": "duantong",
+    "email": "2664787866@qq.com",
+    "url": "https://github.com/sdjnduantong"
   }
 }

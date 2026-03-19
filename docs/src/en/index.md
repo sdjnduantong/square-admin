@@ -4,22 +4,22 @@ layout: home
 sidebar: false
 
 hero:
-  name: Vben Admin
+  name: Tni Admin
   text: Enterprise-Level Management System Framework
   tagline: Fully Upgraded, Ready to Use, Simple and Efficient
   image:
-    src: https://unpkg.com/@vbenjs/static-source@0.1.7/source/logo-v1.webp
-    alt: Vben Admin
+    src: https://unpkg.com/@tnijs/static-source@0.1.7/source/logo-v1.webp
+    alt: Tni Admin
   actions:
     - theme: brand
       text: Get Started ->
-      link: /en/guide/introduction/vben
+      link: /en/guide/introduction/tni
     - theme: alt
       text: Live Preview
-      link: https://www.vben.pro
+      link: https://www.tni.pro
     - theme: alt
       text: View on GitHub
-      link: https://github.com/vbenjs/vue-vben-admin
+      link: https://github.com/tnijs/vue-tni-admin
 
 features:
   - icon: 🚀
@@ -73,4 +73,4 @@ features:
     linkText: Official Site
 ---
 
-<VbenContributors />
+<TniContributors />

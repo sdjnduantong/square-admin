@@ -1,14 +1,14 @@
 <script lang="ts" setup>
-import { useVbenModal } from '@vben/common-ui';
+import { useTniModal } from '@tni/common-ui';
 
 import { Button } from 'ant-design-vue';
 
 import DragDemo from './drag-demo.vue';
 
-const [Modal] = useVbenModal({
+const [Modal] = useTniModal({
   destroyOnClose: true,
 });
-const [BaseModal, baseModalApi] = useVbenModal({
+const [BaseModal, baseModalApi] = useTniModal({
   connectedComponent: DragDemo,
 });
 

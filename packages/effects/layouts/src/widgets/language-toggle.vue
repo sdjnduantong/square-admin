@@ -1,12 +1,12 @@
 <script setup lang="ts">
-import type { SupportedLanguagesType } from '@vben/locales';
+import type { SupportedLanguagesType } from '@tni/locales';
 
-import { SUPPORT_LANGUAGES } from '@vben/constants';
-import { Languages } from '@vben/icons';
-import { loadLocaleMessages } from '@vben/locales';
-import { preferences, updatePreferences } from '@vben/preferences';
+import { SUPPORT_LANGUAGES } from '@tni/constants';
+import { Languages } from '@tni/icons';
+import { loadLocaleMessages } from '@tni/locales';
+import { preferences, updatePreferences } from '@tni/preferences';
 
-import { VbenDropdownRadioMenu, VbenIconButton } from '@vben-core/shadcn-ui';
+import { TniDropdownRadioMenu, TniIconButton } from '@tni-core/shadcn-ui';
 
 defineOptions({
   name: 'LanguageToggle',
@@ -25,15 +25,15 @@ async function handleUpdate(value: string | undefined) {
 </script>
 
 <template>
-  <div>
-    <VbenDropdownRadioMenu
+  <div v-if="SUPPORT_LANGUAGES.length > 1">
+    <TniDropdownRadioMenu
       :menus="SUPPORT_LANGUAGES"
       :model-value="preferences.app.locale"
       @update:model-value="handleUpdate"
     >
-      <VbenIconButton class="hover:animate-[shrink_0.3s_ease-in-out]">
+      <TniIconButton class="hover:animate-[shrink_0.3s_ease-in-out]">
         <Languages class="size-4 text-foreground" />
-      </VbenIconButton>
-    </VbenDropdownRadioMenu>
+      </TniIconButton>
+    </TniDropdownRadioMenu>
   </div>
 </template>

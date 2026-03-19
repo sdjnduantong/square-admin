@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import type { BasicOption } from '@vben/types';
+import type { BasicOption } from '@tni/types';
 
-import type { VbenFormSchema } from '#/adapter/form';
+import type { TniFormSchema } from '#/adapter/form';
 
 import { computed, onMounted, ref } from 'vue';
 
-import { ProfileBaseSetting } from '@vben/common-ui';
+import { ProfileBaseSetting } from '@tni/common-ui';
 
 import { getUserInfoApi } from '#/api';
 
@@ -26,7 +26,7 @@ const MOCK_ROLES_OPTIONS: BasicOption[] = [
   },
 ];
 
-const formSchema = computed((): VbenFormSchema[] => {
+const formSchema = computed((): TniFormSchema[] => {
   return [
     {
       fieldName: 'realName',

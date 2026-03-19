@@ -1,5 +1,5 @@
 {
-  "name": "@vben/vsh",
+  "name": "@tni/vsh",
   "version": "5.7.0",
   "private": true,
   "license": "MIT",
@@ -22,10 +22,22 @@
     "./package.json": "./package.json"
   },
   "dependencies": {
-    "@vben/node-utils": "workspace:*",
+    "@tni/node-utils": "workspace:*",
     "cac": "catalog:",
     "circular-dependency-scanner": "catalog:",
     "depcheck": "catalog:",
     "publint": "catalog:"
+  },
+  "homepage": "https://github.com/sdjnduantong/square-admin.git",
+  "bugs": "https://github.com/sdjnduantong/square-admin/issues",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sdjnduantong/square-admin.git",
+    "directory": "scripts/vsh"
+  },
+  "author": {
+    "name": "duantong",
+    "email": "2664787866@qq.com",
+    "url": "https://github.com/sdjnduantong"
   }
 }

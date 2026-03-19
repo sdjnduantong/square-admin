@@ -11,9 +11,9 @@ import {
   gitAdd,
   outputJSON,
   toPosixPath,
-} from '@vben/node-utils';
+} from '@tni/node-utils';
 
-const CODE_WORKSPACE_FILE = join('vben-admin.code-workspace');
+const CODE_WORKSPACE_FILE = join('tni-admin.code-workspace');
 
 interface CodeWorkspaceCommandOptions {
   autoCommit?: boolean;

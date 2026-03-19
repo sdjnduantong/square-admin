@@ -3,7 +3,7 @@ import type { SetupContext } from 'vue';
 
 import { computed, ref, useSlots } from 'vue';
 
-import { VbenTooltip } from '@vben-core/shadcn-ui';
+import { TniTooltip } from '@tni-core/shadcn-ui';
 
 import { Code } from 'lucide-vue-next';
 import {
@@ -78,7 +78,7 @@ const toggleOpen = () => {
           }"
           class="flex items-center"
         >
-          <VbenTooltip side="top">
+          <TniTooltip side="top">
             <template #trigger>
               <Code
                 class="size-7 cursor-pointer rounded-full p-1.5 hover:bg-accent"
@@ -86,7 +86,7 @@ const toggleOpen = () => {
               />
             </template>
             {{ open ? 'Collapse code' : 'Expand code' }}
-          </VbenTooltip>
+          </TniTooltip>
         </div>
       </div>
     </div>

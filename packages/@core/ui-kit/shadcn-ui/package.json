@@ -1,12 +1,12 @@
 {
-  "name": "@vben-core/shadcn-ui",
+  "name": "@tni-core/shadcn-ui",
   "version": "5.7.0",
-  "homepage": "https://github.com/vbenjs/vue-vben-admin",
-  "bugs": "https://github.com/vbenjs/vue-vben-admin/issues",
+  "homepage": "https://github.com/sdjnduantong/square-admin.git",
+  "bugs": "https://github.com/sdjnduantong/square-admin/issues",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/vbenjs/vue-vben-admin.git",
-    "directory": "packages/@vben-core/uikit/shadcn-ui"
+    "url": "git+https://github.com/sdjnduantong/square-admin.git",
+    "directory": "packages/@core/ui-kit/shadcn-ui"
   },
   "license": "MIT",
   "type": "module",
@@ -37,16 +37,21 @@
     }
   },
   "dependencies": {
-    "@vben-core/composables": "workspace:*",
-    "@vben-core/design": "workspace:*",
-    "@vben-core/icons": "workspace:*",
-    "@vben-core/shared": "workspace:*",
-    "@vben-core/typings": "workspace:*",
+    "@tni-core/composables": "workspace:*",
+    "@tni-core/design": "workspace:*",
+    "@tni-core/icons": "workspace:*",
+    "@tni-core/shared": "workspace:*",
+    "@tni-core/typings": "workspace:*",
     "@vueuse/core": "catalog:",
     "class-variance-authority": "catalog:",
     "lucide-vue-next": "catalog:",
     "reka-ui": "catalog:",
     "vee-validate": "catalog:",
     "vue": "catalog:"
+  },
+  "author": {
+    "name": "duantong",
+    "email": "2664787866@qq.com",
+    "url": "https://github.com/sdjnduantong"
   }
 }

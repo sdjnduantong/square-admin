@@ -1,10 +1,6 @@
 import type { PluginOption } from 'vite';
 
-import {
-  colors,
-  generatorContentHash,
-  readPackageJSON,
-} from '@vben/node-utils';
+import { colors, generatorContentHash, readPackageJSON } from '@tni/node-utils';
 
 import { loadEnv } from '../utils/env';
 
@@ -14,7 +10,7 @@ interface PluginOptions {
 }
 
 const GLOBAL_CONFIG_FILE_NAME = '_app.config.js';
-const VBEN_ADMIN_PRO_APP_CONF = '_VBEN_ADMIN_PRO_APP_CONF_';
+const VBEN_ADMIN_PRO_APP_CONF = '_TNI_ADMIN_PRO_APP_CONF_';
 
 /**
  * 用于将配置文件抽离出来并注入到项目中

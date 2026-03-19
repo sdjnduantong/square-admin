@@ -1,11 +1,11 @@
 <script lang="ts" setup>
-import type { VbenFormSchema } from '@vben/common-ui';
-import type { BasicOption } from '@vben/types';
+import type { TniFormSchema } from '@tni/common-ui';
+import type { BasicOption } from '@tni/types';
 
 import { computed, markRaw } from 'vue';
 
-import { AuthenticationLogin, SliderCaptcha, z } from '@vben/common-ui';
-import { $t } from '@vben/locales';
+import { AuthenticationLogin, SliderCaptcha, z } from '@tni/common-ui';
+import { $t } from '@tni/locales';
 
 import { useAuthStore } from '#/store';
 
@@ -16,7 +16,7 @@ const authStore = useAuthStore();
 const MOCK_USER_OPTIONS: BasicOption[] = [
   {
     label: 'Super',
-    value: 'vben',
+    value: 'tni',
   },
   {
     label: 'Admin',
@@ -28,10 +28,10 @@ const MOCK_USER_OPTIONS: BasicOption[] = [
   },
 ];
 
-const formSchema = computed((): VbenFormSchema[] => {
+const formSchema = computed((): TniFormSchema[] => {
   return [
     {
-      component: 'VbenSelect',
+      component: 'TniSelect',
       componentProps: {
         options: MOCK_USER_OPTIONS,
         placeholder: $t('authentication.selectAccount'),
@@ -42,10 +42,10 @@ const formSchema = computed((): VbenFormSchema[] => {
         .string()
         .min(1, { message: $t('authentication.selectAccount') })
         .optional()
-        .default('vben'),
+        .default('tni'),
     },
     {
-      component: 'VbenInput',
+      component: 'TniInput',
       componentProps: {
         placeholder: $t('authentication.usernameTip'),
       },
@@ -70,7 +70,7 @@ const formSchema = computed((): VbenFormSchema[] => {
       rules: z.string().min(1, { message: $t('authentication.usernameTip') }),
     },
     {
-      component: 'VbenInputPassword',
+      component: 'TniInputPassword',
       componentProps: {
         placeholder: $t('authentication.password'),
       },

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 
-import { Page } from '@vben/common-ui';
+import { Page } from '@tni/common-ui';
 
 import { NDataTable } from 'naive-ui';
 

@@ -1,11 +1,11 @@
 {
-  "name": "@vben/styles",
+  "name": "@tni/styles",
   "version": "5.7.0",
-  "homepage": "https://github.com/vbenjs/vue-vben-admin",
-  "bugs": "https://github.com/vbenjs/vue-vben-admin/issues",
+  "homepage": "https://github.com/sdjnduantong/square-admin.git",
+  "bugs": "https://github.com/sdjnduantong/square-admin/issues",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/vbenjs/vue-vben-admin.git",
+    "url": "git+https://github.com/sdjnduantong/square-admin.git",
     "directory": "packages/styles"
   },
   "license": "MIT",
@@ -32,6 +32,11 @@
     }
   },
   "dependencies": {
-    "@vben-core/design": "workspace:*"
+    "@tni-core/design": "workspace:*"
+  },
+  "author": {
+    "name": "duantong",
+    "email": "2664787866@qq.com",
+    "url": "https://github.com/sdjnduantong"
   }
 }

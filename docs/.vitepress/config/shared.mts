@@ -6,7 +6,7 @@ import { resolve } from 'node:path';
 import {
   viteArchiverPlugin,
   viteVxeTableImportsPlugin,
-} from '@vben/vite-config';
+} from '@tni/vite-config';
 
 import {
   GitChangelog,
@@ -35,7 +35,7 @@ export const shared = defineConfig({
   srcDir: 'src',
   themeConfig: {
     i18nRouting: true,
-    logo: 'https://unpkg.com/@vbenjs/static-source@0.1.7/source/logo-v1.webp',
+    logo: 'https://unpkg.com/@tnijs/static-source@0.1.7/source/logo-v1.webp',
     search: {
       options: {
         locales: {
@@ -44,12 +44,12 @@ export const shared = defineConfig({
       },
       provider: 'local',
     },
-    siteTitle: 'Vben Admin',
+    siteTitle: 'Tni Admin',
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/vbenjs/vue-vben-admin' },
+      { icon: 'github', link: 'https://github.com/tnijs/vue-tni-admin' },
     ],
   },
-  title: 'Vben Admin',
+  title: 'Tni Admin',
   vite: {
     build: {
       chunkSizeWarningLimit: Infinity,
@@ -73,8 +73,8 @@ export const shared = defineConfig({
       GitChangelog({
         mapAuthors: [
           {
-            mapByNameAliases: ['Vben'],
-            name: 'vben',
+            mapByNameAliases: ['Tni'],
+            name: 'tni',
             username: 'anncwb',
           },
           {
@@ -86,7 +86,7 @@ export const shared = defineConfig({
             username: 'likui628',
           },
         ],
-        repoURL: () => 'https://github.com/vbenjs/vue-vben-admin',
+        repoURL: () => 'https://github.com/tnijs/vue-tni-admin',
       }),
       GitChangelogMarkdownSection(),
       viteArchiverPlugin({ outputDir: '.vitepress' }),
@@ -109,11 +109,11 @@ export const shared = defineConfig({
 
 function head(): HeadConfig[] {
   return [
-    ['meta', { content: 'Vbenjs Team', name: 'author' }],
+    ['meta', { content: 'Tnijs Team', name: 'author' }],
     [
       'meta',
       {
-        content: 'vben, vitejs, vite, shacdn-ui, vue',
+        content: 'tni, vitejs, vite, shacdn-ui, vue',
         name: 'keywords',
       },
     ],
@@ -126,7 +126,7 @@ function head(): HeadConfig[] {
         name: 'viewport',
       },
     ],
-    ['meta', { content: 'vben admin docs', name: 'keywords' }],
+    ['meta', { content: 'tni admin docs', name: 'keywords' }],
     ['link', { href: '/favicon.ico', rel: 'icon' }],
     // [
     //   'script',
@@ -142,22 +142,22 @@ function pwa(): PwaOptions {
     includeManifestIcons: false,
     manifest: {
       description:
-        'Vben Admin is a modern admin dashboard template based on Vue 3. ',
+        'Tni Admin is a modern admin dashboard template based on Vue 3. ',
       icons: [
         {
           sizes: '192x192',
-          src: 'https://unpkg.com/@vbenjs/static-source@0.1.7/source/pwa-icon-192.png',
+          src: 'https://unpkg.com/@tnijs/static-source@0.1.7/source/pwa-icon-192.png',
           type: 'image/png',
         },
         {
           sizes: '512x512',
-          src: 'https://unpkg.com/@vbenjs/static-source@0.1.7/source/pwa-icon-512.png',
+          src: 'https://unpkg.com/@tnijs/static-source@0.1.7/source/pwa-icon-512.png',
           type: 'image/png',
         },
       ],
       id: '/',
-      name: 'Vben Admin Doc',
-      short_name: 'vben_admin_doc',
+      name: 'Tni Admin Doc',
+      short_name: 'tni_admin_doc',
       theme_color: '#ffffff',
     },
     outDir: resolve(process.cwd(), '.vitepress/dist'),

@@ -1,11 +1,11 @@
 {
-  "name": "@vben/layouts",
+  "name": "@tni/layouts",
   "version": "5.7.0",
-  "homepage": "https://github.com/vbenjs/vue-vben-admin",
-  "bugs": "https://github.com/vbenjs/vue-vben-admin/issues",
+  "homepage": "https://github.com/sdjnduantong/square-admin.git",
+  "bugs": "https://github.com/sdjnduantong/square-admin/issues",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/vbenjs/vue-vben-admin.git",
+    "url": "git+https://github.com/sdjnduantong/square-admin.git",
     "directory": "packages/effects/layouts"
   },
   "license": "MIT",
@@ -20,25 +20,30 @@
     }
   },
   "dependencies": {
-    "@vben-core/composables": "workspace:*",
-    "@vben-core/design": "workspace:*",
-    "@vben-core/form-ui": "workspace:*",
-    "@vben-core/layout-ui": "workspace:*",
-    "@vben-core/menu-ui": "workspace:*",
-    "@vben-core/popup-ui": "workspace:*",
-    "@vben-core/shadcn-ui": "workspace:*",
-    "@vben-core/shared": "workspace:*",
-    "@vben-core/tabs-ui": "workspace:*",
-    "@vben/constants": "workspace:*",
-    "@vben/hooks": "workspace:*",
-    "@vben/icons": "workspace:*",
-    "@vben/locales": "workspace:*",
-    "@vben/preferences": "workspace:*",
-    "@vben/stores": "workspace:*",
-    "@vben/types": "workspace:*",
-    "@vben/utils": "workspace:*",
+    "@tni-core/composables": "workspace:*",
+    "@tni-core/design": "workspace:*",
+    "@tni-core/form-ui": "workspace:*",
+    "@tni-core/layout-ui": "workspace:*",
+    "@tni-core/menu-ui": "workspace:*",
+    "@tni-core/popup-ui": "workspace:*",
+    "@tni-core/shadcn-ui": "workspace:*",
+    "@tni-core/shared": "workspace:*",
+    "@tni-core/tabs-ui": "workspace:*",
+    "@tni/constants": "workspace:*",
+    "@tni/hooks": "workspace:*",
+    "@tni/icons": "workspace:*",
+    "@tni/locales": "workspace:*",
+    "@tni/preferences": "workspace:*",
+    "@tni/stores": "workspace:*",
+    "@tni/types": "workspace:*",
+    "@tni/utils": "workspace:*",
     "@vueuse/core": "catalog:",
     "vue": "catalog:",
     "vue-router": "catalog:"
+  },
+  "author": {
+    "name": "duantong",
+    "email": "2664787866@qq.com",
+    "url": "https://github.com/sdjnduantong"
   }
 }

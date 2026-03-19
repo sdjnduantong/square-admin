@@ -1,14 +1,14 @@
 <script setup lang="ts">
 import type { Component } from 'vue';
 
-import type { LayoutType } from '@vben/types';
+import type { LayoutType } from '@tni/types';
 
 import { computed } from 'vue';
 
-import { CircleHelp } from '@vben/icons';
-import { $t } from '@vben/locales';
+import { CircleHelp } from '@tni/icons';
+import { $t } from '@tni/locales';
 
-import { VbenTooltip } from '@vben-core/shadcn-ui';
+import { TniTooltip } from '@tni-core/shadcn-ui';
 
 import {
   FullContent,
@@ -99,12 +99,12 @@ function activeClass(theme: string): string[] {
           class="mt-2 flex-center text-center text-xs text-muted-foreground hover:text-foreground"
         >
           {{ theme.name }}
-          <VbenTooltip v-if="theme.tip" side="bottom">
+          <TniTooltip v-if="theme.tip" side="bottom">
             <template #trigger>
               <CircleHelp class="ml-1 size-3 cursor-help" />
             </template>
             {{ theme.tip }}
-          </VbenTooltip>
+          </TniTooltip>
         </div>
       </div>
     </template>

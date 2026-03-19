@@ -1,11 +1,11 @@
 {
-  "name": "@vben/plugins",
+  "name": "@tni/plugins",
   "version": "5.7.0",
-  "homepage": "https://github.com/vbenjs/vue-vben-admin",
-  "bugs": "https://github.com/vbenjs/vue-vben-admin/issues",
+  "homepage": "https://github.com/sdjnduantong/square-admin.git",
+  "bugs": "https://github.com/sdjnduantong/square-admin/issues",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/vbenjs/vue-vben-admin.git",
+    "url": "git+https://github.com/sdjnduantong/square-admin.git",
     "directory": "packages/effects/plugins"
   },
   "license": "MIT",
@@ -28,21 +28,26 @@
     }
   },
   "dependencies": {
-    "@vben-core/design": "workspace:*",
-    "@vben-core/form-ui": "workspace:*",
-    "@vben-core/shadcn-ui": "workspace:*",
-    "@vben-core/shared": "workspace:*",
-    "@vben/hooks": "workspace:*",
-    "@vben/icons": "workspace:*",
-    "@vben/locales": "workspace:*",
-    "@vben/preferences": "workspace:*",
-    "@vben/types": "workspace:*",
-    "@vben/utils": "workspace:*",
+    "@tni-core/design": "workspace:*",
+    "@tni-core/form-ui": "workspace:*",
+    "@tni-core/shadcn-ui": "workspace:*",
+    "@tni-core/shared": "workspace:*",
+    "@tni/hooks": "workspace:*",
+    "@tni/icons": "workspace:*",
+    "@tni/locales": "workspace:*",
+    "@tni/preferences": "workspace:*",
+    "@tni/types": "workspace:*",
+    "@tni/utils": "workspace:*",
     "@vueuse/core": "catalog:",
     "@vueuse/motion": "catalog:",
     "echarts": "catalog:",
     "vue": "catalog:",
     "vxe-pc-ui": "catalog:",
     "vxe-table": "catalog:"
+  },
+  "author": {
+    "name": "duantong",
+    "email": "2664787866@qq.com",
+    "url": "https://github.com/sdjnduantong"
   }
 }

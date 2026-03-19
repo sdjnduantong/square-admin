@@ -1,1 +1,1 @@
-export { default as VbenBackTop } from './back-top.vue';
+export { default as TniBackTop } from './back-top.vue';

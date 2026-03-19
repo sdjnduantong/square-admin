@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-import { VbenSpinner } from '@vben-core/shadcn-ui';
-import { cn } from '@vben-core/shared/utils';
+import { TniSpinner } from '@tni-core/shadcn-ui';
+import { cn } from '@tni-core/shared/utils';
 
 interface SpinnerProps {
   class?: string;
@@ -20,7 +20,7 @@ const props = defineProps<SpinnerProps>();
 <template>
   <div :class="cn('relative min-h-20', props.class)">
     <slot></slot>
-    <VbenSpinner
+    <TniSpinner
       :min-loading-time="props.minLoadingTime"
       :spinning="props.spinning"
     />

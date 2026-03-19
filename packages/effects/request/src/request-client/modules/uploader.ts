@@ -1,7 +1,7 @@
 import type { RequestClient } from '../request-client';
 import type { RequestClientConfig } from '../types';
 
-import { isUndefined } from '@vben/utils';
+import { isUndefined } from '@tni/utils';
 
 class FileUploader {
   private client: RequestClient;

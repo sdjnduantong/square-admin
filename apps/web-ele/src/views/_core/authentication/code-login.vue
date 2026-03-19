@@ -1,21 +1,21 @@
 <script lang="ts" setup>
-import type { VbenFormSchema } from '@vben/common-ui';
-import type { Recordable } from '@vben/types';
+import type { TniFormSchema } from '@tni/common-ui';
+import type { Recordable } from '@tni/types';
 
 import { computed, ref } from 'vue';
 
-import { AuthenticationCodeLogin, z } from '@vben/common-ui';
-import { $t } from '@vben/locales';
+import { AuthenticationCodeLogin, z } from '@tni/common-ui';
+import { $t } from '@tni/locales';
 
 defineOptions({ name: 'CodeLogin' });
 
 const loading = ref(false);
 const CODE_LENGTH = 6;
 
-const formSchema = computed((): VbenFormSchema[] => {
+const formSchema = computed((): TniFormSchema[] => {
   return [
     {
-      component: 'VbenInput',
+      component: 'TniInput',
       componentProps: {
         placeholder: $t('authentication.mobile'),
       },
@@ -29,7 +29,7 @@ const formSchema = computed((): VbenFormSchema[] => {
         }),
     },
     {
-      component: 'VbenPinInput',
+      component: 'TniPinInput',
       componentProps: {
         codeLength: CODE_LENGTH,
         createText: (countdown: number) => {

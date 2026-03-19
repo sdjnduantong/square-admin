@@ -1,15 +1,12 @@
-import type {
-  VbenFormSchema as FormSchema,
-  VbenFormProps,
-} from '@vben/common-ui';
+import type { TniFormSchema as FormSchema, TniFormProps } from '@tni/common-ui';
 
 import type { ComponentType } from './component';
 
-import { setupVbenForm, useVbenForm as useForm, z } from '@vben/common-ui';
-import { $t } from '@vben/locales';
+import { setupTniForm, useTniForm as useForm, z } from '@tni/common-ui';
+import { $t } from '@tni/locales';
 
-async function initSetupVbenForm() {
-  setupVbenForm<ComponentType>({
+async function initSetupTniForm() {
+  setupTniForm<ComponentType>({
     config: {
       // naive-ui组件的空值为null,不能是undefined，否则重置表单时不生效
       emptyStateValue: null,
@@ -37,9 +34,9 @@ async function initSetupVbenForm() {
   });
 }
 
-const useVbenForm = useForm<ComponentType>;
+const useTniForm = useForm<ComponentType>;
 
-export { initSetupVbenForm, useVbenForm, z };
+export { initSetupTniForm, useTniForm, z };
 
-export type VbenFormSchema = FormSchema<ComponentType>;
-export type { VbenFormProps };
+export type TniFormSchema = FormSchema<ComponentType>;
+export type { TniFormProps };

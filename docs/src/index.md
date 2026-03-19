@@ -4,25 +4,25 @@ layout: home
 sidebar: false
 
 hero:
-  name: Vben Admin
+  name: Tni Admin
   text: 企业级管理系统框架
   tagline: 全新升级，开箱即用，简单高效
   image:
-    src: https://unpkg.com/@vbenjs/static-source@0.1.7/source/logo-v1.webp
-    alt: Vben Admin
+    src: https://unpkg.com/@tnijs/static-source@0.1.7/source/logo-v1.webp
+    alt: Tni Admin
   actions:
     - theme: brand
       text: 快速开始 ->
-      link: /guide/introduction/vben
+      link: /guide/introduction/tni
     - theme: alt
       text: 在线预览
-      link: https://www.vben.pro
+      link: https://www.tni.pro
     - theme: alt
       text: 在 GitHub 查看
-      link: https://github.com/vbenjs/vue-vben-admin
+      link: https://github.com/tnijs/vue-tni-admin
     - theme: alt
       text: DeepWiki 文档
-      link: https://deepwiki.com/vbenjs/vue-vben-admin
+      link: https://deepwiki.com/tnijs/vue-tni-admin
 
 features:
   - icon: 🚀
@@ -87,9 +87,9 @@ import {
 const members = [
   {
     avatar: 'https://avatars.githubusercontent.com/u/28132598?v=4',
-    name: 'Vben',
+    name: 'Tni',
     title: '创建者',
-    desc: 'Vben Admin以及相关生态的作者，负责项目的整体开发。',
+    desc: 'Tni Admin以及相关生态的作者，负责项目的整体开发。',
     links: [
       { icon: 'github', link: 'https://github.com/anncwb' },
     ]
@@ -108,4 +108,4 @@ const members = [
   />
 </VPTeamPage> -->
 
-<VbenContributors />
+<TniContributors />

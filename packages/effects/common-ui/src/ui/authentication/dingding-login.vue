@@ -1,12 +1,12 @@
 <script setup lang="ts">
 import { useRoute } from 'vue-router';
 
-import { SvgDingDingIcon } from '@vben/icons';
-import { $t } from '@vben/locales';
+import { SvgDingDingIcon } from '@tni/icons';
+import { $t } from '@tni/locales';
 
-import { alert, useVbenModal } from '@vben-core/popup-ui';
-import { VbenIconButton } from '@vben-core/shadcn-ui';
-import { loadScript } from '@vben-core/shared/utils';
+import { alert, useTniModal } from '@tni-core/popup-ui';
+import { TniIconButton } from '@tni-core/shadcn-ui';
+import { loadScript } from '@tni-core/shared/utils';
 
 interface Props {
   clientId: string;
@@ -21,7 +21,7 @@ const props = defineProps<Props>();
 
 const route = useRoute();
 
-const [Modal, modalApi] = useVbenModal({
+const [Modal, modalApi] = useTniModal({
   header: false,
   footer: false,
   fullscreenButton: false,
@@ -91,13 +91,13 @@ const handleLogin = () => {
 
 <template>
   <div>
-    <VbenIconButton
+    <TniIconButton
       @click="handleLogin"
       :tooltip="$t('authentication.dingdingLogin')"
       tooltip-side="top"
     >
       <SvgDingDingIcon />
-    </VbenIconButton>
+    </TniIconButton>
     <Modal>
       <div id="dingding_qrcode_login_element"></div>
     </Modal>

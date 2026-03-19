@@ -1,14 +1,14 @@
-import type { VxeTableGridOptions } from '@vben/plugins/vxe-table';
+import type { VxeTableGridOptions } from '@tni/plugins/vxe-table';
 
 import { h } from 'vue';
 
-import { setupVbenVxeTable, useVbenVxeGrid } from '@vben/plugins/vxe-table';
+import { setupTniVxeTable, useTniVxeGrid } from '@tni/plugins/vxe-table';
 
 import { Button, Image } from 'antdv-next';
 
-import { useVbenForm } from './form';
+import { useTniForm } from './form';
 
-setupVbenVxeTable({
+setupTniVxeTable({
   configVxeTable: (vxeUI) => {
     vxeUI.setConfig({
       grid: {
@@ -62,9 +62,9 @@ setupVbenVxeTable({
     // 这里可以自行扩展 vxe-table 的全局配置，比如自定义格式化
     // vxeUI.formats.add
   },
-  useVbenForm,
+  useTniForm,
 });
 
-export { useVbenVxeGrid };
+export { useTniVxeGrid };
 
-export type * from '@vben/plugins/vxe-table';
+export type * from '@tni/plugins/vxe-table';

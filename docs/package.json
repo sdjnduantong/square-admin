@@ -1,5 +1,5 @@
 {
-  "name": "@vben/docs",
+  "name": "@tni/docs",
   "version": "5.7.0",
   "private": true,
   "scripts": {
@@ -14,11 +14,11 @@
     }
   },
   "dependencies": {
-    "@vben-core/shadcn-ui": "workspace:*",
-    "@vben/common-ui": "workspace:*",
-    "@vben/locales": "workspace:*",
-    "@vben/plugins": "workspace:*",
-    "@vben/styles": "workspace:*",
+    "@tni-core/shadcn-ui": "workspace:*",
+    "@tni/common-ui": "workspace:*",
+    "@tni/locales": "workspace:*",
+    "@tni/plugins": "workspace:*",
+    "@tni/styles": "workspace:*",
     "ant-design-vue": "catalog:",
     "lucide-vue-next": "catalog:",
     "medium-zoom": "catalog:",
@@ -28,9 +28,21 @@
   "devDependencies": {
     "@nolebase/vitepress-plugin-git-changelog": "catalog:",
     "@tailwindcss/vite": "catalog:",
-    "@vben/vite-config": "workspace:*",
+    "@tni/vite-config": "workspace:*",
     "@vite-pwa/vitepress": "catalog:",
     "vitepress": "catalog:",
     "vue": "catalog:"
+  },
+  "homepage": "https://github.com/sdjnduantong/square-admin.git",
+  "bugs": "https://github.com/sdjnduantong/square-admin/issues",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sdjnduantong/square-admin.git",
+    "directory": "docs"
+  },
+  "author": {
+    "name": "duantong",
+    "email": "2664787866@qq.com",
+    "url": "https://github.com/sdjnduantong"
   }
 }

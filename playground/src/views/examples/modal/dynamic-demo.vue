@@ -1,9 +1,9 @@
 <script lang="ts" setup>
-import { useVbenModal } from '@vben/common-ui';
+import { useTniModal } from '@tni/common-ui';
 
 import { Button, message } from 'ant-design-vue';
 
-const [Modal, modalApi] = useVbenModal({
+const [Modal, modalApi] = useTniModal({
   draggable: true,
   onCancel() {
     modalApi.close();

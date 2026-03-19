@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type { AvatarVariants } from './avatar';
 
-import { cn } from '@vben-core/shared/utils';
+import { cn } from '@tni-core/shared/utils';
 
 import { AvatarRoot } from 'reka-ui';
 

@@ -16,8 +16,8 @@ import {
   useIsMobile,
   usePriorityValues,
   useSimpleLocale,
-} from '@vben-core/composables';
-import { Expand, Shrink } from '@vben-core/icons';
+} from '@tni-core/composables';
+import { Expand, Shrink } from '@tni-core/icons';
 import {
   Dialog,
   DialogContent,
@@ -25,15 +25,15 @@ import {
   DialogFooter,
   DialogHeader,
   DialogTitle,
-  VbenButton,
-  VbenHelpTooltip,
-  VbenIconButton,
-  VbenLoading,
+  TniButton,
+  TniHelpTooltip,
+  TniIconButton,
+  TniLoading,
   VisuallyHidden,
-} from '@vben-core/shadcn-ui';
-import { ELEMENT_ID_MAIN_CONTENT } from '@vben-core/shared/constants';
-import { globalShareState } from '@vben-core/shared/global-state';
-import { cn } from '@vben-core/shared/utils';
+} from '@tni-core/shadcn-ui';
+import { ELEMENT_ID_MAIN_CONTENT } from '@tni-core/shared/constants';
+import { globalShareState } from '@tni-core/shared/global-state';
+import { cn } from '@tni-core/shared/utils';
 
 import { useModalDraggable } from './use-modal-draggable';
 
@@ -290,9 +290,9 @@ function handleClosed() {
             {{ title }}
 
             <slot v-if="titleTooltip" name="titleTooltip">
-              <VbenHelpTooltip trigger-class="pb-1">
+              <TniHelpTooltip trigger-class="pb-1">
                 {{ titleTooltip }}
-              </VbenHelpTooltip>
+              </TniHelpTooltip>
             </slot>
           </slot>
         </DialogTitle>
@@ -316,15 +316,15 @@ function handleClosed() {
       >
         <slot></slot>
       </div>
-      <VbenLoading v-if="showLoading || submitting" spinning />
-      <VbenIconButton
+      <TniLoading v-if="showLoading || submitting" spinning />
+      <TniIconButton
         v-if="fullscreenButton"
         class="absolute top-3 right-10 flex-center hidden size-6 rounded-full px-1 text-lg text-foreground/80 opacity-70 transition-opacity hover:bg-accent hover:text-accent-foreground hover:opacity-100 focus:outline-hidden disabled:pointer-events-none sm:block"
         @click="handleFullscreen"
       >
         <Shrink v-if="fullscreen" class="size-3.5" />
         <Expand v-else class="size-3.5" />
-      </VbenIconButton>
+      </TniIconButton>
 
       <DialogFooter
         ref="footerRef"
@@ -342,7 +342,7 @@ function handleClosed() {
         <slot name="prepend-footer"></slot>
         <slot name="footer">
           <component
-            :is="components.DefaultButton || VbenButton"
+            :is="components.DefaultButton || TniButton"
             v-if="showCancelButton"
             variant="ghost"
             :disabled="submitting"
@@ -354,7 +354,7 @@ function handleClosed() {
           </component>
           <slot name="center-footer"></slot>
           <component
-            :is="components.PrimaryButton || VbenButton"
+            :is="components.PrimaryButton || TniButton"
             v-if="showConfirmButton"
             :disabled="confirmDisabled"
             :loading="confirmLoading || submitting"

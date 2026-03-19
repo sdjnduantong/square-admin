@@ -1,8 +1,8 @@
-export { setupVbenVxeTable } from './init';
+export { setupTniVxeTable } from './init';
 export type { VxeTableGridOptions } from './types';
 export * from './use-vxe-grid';
 
-export { default as VbenVxeGrid } from './use-vxe-grid.vue';
+export { default as TniVxeGrid } from './use-vxe-grid.vue';
 export type {
   VxeGridListeners,
   VxeGridProps,

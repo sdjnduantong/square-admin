@@ -1,7 +1,7 @@
 <script lang="ts" setup>
-import type { DrawerPlacement, DrawerState } from '@vben/common-ui';
+import type { DrawerPlacement, DrawerState } from '@tni/common-ui';
 
-import { Page, useVbenDrawer } from '@vben/common-ui';
+import { Page, useTniDrawer } from '@tni/common-ui';
 
 import { Button, Card } from 'ant-design-vue';
 
@@ -14,31 +14,31 @@ import inContentDemo from './in-content-demo.vue';
 import SharedDataDemo from './shared-data-demo.vue';
 
 defineOptions({ name: 'DrawerExample' });
-const [BaseDrawer, baseDrawerApi] = useVbenDrawer({
+const [BaseDrawer, baseDrawerApi] = useTniDrawer({
   // 连接抽离的组件
   connectedComponent: BaseDemo,
   // placement: 'left',
 });
 
-const [InContentDrawer, inContentDrawerApi] = useVbenDrawer({
+const [InContentDrawer, inContentDrawerApi] = useTniDrawer({
   // 连接抽离的组件
   connectedComponent: inContentDemo,
   // placement: 'left',
 });
 
-const [AutoHeightDrawer, autoHeightDrawerApi] = useVbenDrawer({
+const [AutoHeightDrawer, autoHeightDrawerApi] = useTniDrawer({
   connectedComponent: AutoHeightDemo,
 });
 
-const [DynamicDrawer, dynamicDrawerApi] = useVbenDrawer({
+const [DynamicDrawer, dynamicDrawerApi] = useTniDrawer({
   connectedComponent: DynamicDemo,
 });
 
-const [SharedDataDrawer, sharedDrawerApi] = useVbenDrawer({
+const [SharedDataDrawer, sharedDrawerApi] = useTniDrawer({
   connectedComponent: SharedDataDemo,
 });
 
-const [FormDrawer, formDrawerApi] = useVbenDrawer({
+const [FormDrawer, formDrawerApi] = useTniDrawer({
   connectedComponent: FormDrawerDemo,
 });
 
@@ -102,7 +102,7 @@ function openFormDrawer() {
     title="抽屉组件示例"
   >
     <template #extra>
-      <DocButton path="/components/common-ui/vben-drawer" />
+      <DocButton path="/components/common-ui/tni-drawer" />
     </template>
     <BaseDrawer />
     <InContentDrawer />

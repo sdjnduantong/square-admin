@@ -6,7 +6,7 @@ import type {
 
 import { computed, ref, watch } from 'vue';
 
-import { get, isBoolean, isFunction } from '@vben-core/shared/utils';
+import { get, isBoolean, isFunction } from '@tni-core/shared/utils';
 
 import { useFormValues } from 'vee-validate';
 
@@ -43,7 +43,7 @@ export default function useDependencies(
   }
 
   if (!values) {
-    throw new Error('useDependencies should be used within <VbenForm>');
+    throw new Error('useDependencies should be used within <TniForm>');
   }
 
   const isIf = ref(true);

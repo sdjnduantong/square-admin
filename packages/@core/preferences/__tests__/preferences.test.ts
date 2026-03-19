@@ -33,7 +33,7 @@ describe('preferences', () => {
   it('initializes preferences with overrides', async () => {
     const overrides: any = {
       app: {
-        locale: 'en-US',
+        locale: 'zh-CN',
       },
     };
     await preferenceManager.initPreferences({
@@ -113,10 +113,10 @@ describe('preferences', () => {
 
   it('updates the locale preference correctly', () => {
     preferenceManager.updatePreferences({
-      app: { locale: 'en-US' },
+      app: { locale: 'zh-CN' },
     });
 
-    expect(preferenceManager.getPreferences().app.locale).toBe('en-US');
+    expect(preferenceManager.getPreferences().app.locale).toBe('zh-CN');
   });
 
   it('updates the sidebar width correctly', () => {
@@ -146,7 +146,7 @@ describe('preferences', () => {
   it('resets preferences to default correctly', () => {
     // 先更新一些偏好设置
     preferenceManager.updatePreferences({
-      app: { locale: 'en-US' },
+      app: { locale: 'zh-CN' },
       sidebar: { collapsed: true, width: 200 },
       theme: {
         mode: 'light',
@@ -171,14 +171,22 @@ describe('preferences', () => {
 
   it('reverts to default when a preference field is deleted', () => {
     preferenceManager.updatePreferences({
-      app: { locale: 'en-US' },
+      app: { locale: 'zh-CN' },
     });
 
     preferenceManager.updatePreferences({
       app: { locale: undefined },
     });
 
-    expect(preferenceManager.getPreferences().app.locale).toBe('en-US');
+    expect(preferenceManager.getPreferences().app.locale).toBe('zh-CN');
+  });
+
+  it('normalizes unsupported locale values to zh-CN', () => {
+    preferenceManager.updatePreferences({
+      app: { locale: 'en-US' },
+    } as any);
+
+    expect(preferenceManager.getPreferences().app.locale).toBe('zh-CN');
   });
 
   it('ignores updates with invalid preference value types', () => {
@@ -210,7 +218,7 @@ describe('preferences', () => {
   it('applies updates immediately after initialization', async () => {
     const overrides: any = {
       app: {
-        locale: 'en-US',
+        locale: 'zh-CN',
       },
     };
 

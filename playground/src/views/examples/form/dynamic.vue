@@ -1,11 +1,11 @@
 <script lang="ts" setup>
-import { Page } from '@vben/common-ui';
+import { Page } from '@tni/common-ui';
 
 import { Button, Card, message } from 'ant-design-vue';
 
-import { useVbenForm } from '#/adapter/form';
+import { useTniForm } from '#/adapter/form';
 
-const [Form, formApi] = useVbenForm({
+const [Form, formApi] = useTniForm({
   // 提交函数
   handleSubmit: onSubmit,
   schema: [
@@ -163,7 +163,7 @@ const [Form, formApi] = useVbenForm({
   wrapperClass: 'grid-cols-1 md:grid-cols-3 lg:grid-cols-4',
 });
 
-const [SyncForm] = useVbenForm({
+const [SyncForm] = useTniForm({
   handleSubmit: onSubmit,
   schema: [
     {

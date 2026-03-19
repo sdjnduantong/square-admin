@@ -1,13 +1,13 @@
 <script lang="ts" setup>
-import { useVbenDrawer } from '@vben/common-ui';
+import { useTniDrawer } from '@tni/common-ui';
 
-import { useVbenForm } from '#/adapter/form';
+import { useTniForm } from '#/adapter/form';
 
 defineOptions({
   name: 'FormDrawerDemo',
 });
 
-const [Form, formApi] = useVbenForm({
+const [Form, formApi] = useTniForm({
   schema: [
     {
       component: 'Input',
@@ -30,7 +30,7 @@ const [Form, formApi] = useVbenForm({
   ],
   showDefaultActions: false,
 });
-const [Drawer, drawerApi] = useVbenDrawer({
+const [Drawer, drawerApi] = useTniDrawer({
   onCancel() {
     drawerApi.close();
   },

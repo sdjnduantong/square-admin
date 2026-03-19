@@ -1,26 +1,26 @@
-import type { VxeTableGridOptions } from '@vben/plugins/vxe-table';
-import type { Recordable } from '@vben/types';
+import type { VxeTableGridOptions } from '@tni/plugins/vxe-table';
+import type { Recordable } from '@tni/types';
 
 import type { ComponentType } from './component';
 
 import { h } from 'vue';
 
-import { IconifyIcon } from '@vben/icons';
-import { $te } from '@vben/locales';
+import { IconifyIcon } from '@tni/icons';
+import { $te } from '@tni/locales';
 import {
-  setupVbenVxeTable,
-  useVbenVxeGrid as useGrid,
-} from '@vben/plugins/vxe-table';
-import { get, isFunction, isString } from '@vben/utils';
+  setupTniVxeTable,
+  useTniVxeGrid as useGrid,
+} from '@tni/plugins/vxe-table';
+import { get, isFunction, isString } from '@tni/utils';
 
 import { objectOmit } from '@vueuse/core';
 import { Button, Image, Popconfirm, Switch, Tag } from 'ant-design-vue';
 
 import { $t } from '#/locales';
 
-import { useVbenForm } from './form';
+import { useTniForm } from './form';
 
-setupVbenVxeTable({
+setupTniVxeTable({
   configVxeTable: (vxeUI) => {
     vxeUI.setConfig({
       grid: {
@@ -281,10 +281,10 @@ setupVbenVxeTable({
     // 这里可以自行扩展 vxe-table 的全局配置，比如自定义格式化
     // vxeUI.formats.add
   },
-  useVbenForm,
+  useTniForm,
 });
 
-export const useVbenVxeGrid = <T extends Record<string, any>>(
+export const useTniVxeGrid = <T extends Record<string, any>>(
   ...rest: Parameters<typeof useGrid<T, ComponentType>>
 ) => useGrid<T, ComponentType>(...rest);
 
@@ -295,4 +295,4 @@ export type OnActionClickParams<T = Recordable<any>> = {
 export type OnActionClickFn<T = Recordable<any>> = (
   params: OnActionClickParams<T>,
 ) => void;
-export type * from '@vben/plugins/vxe-table';
+export type * from '@tni/plugins/vxe-table';

@@ -2,12 +2,13 @@ import type {
   NormalizedOutputOptions,
   OutputBundle,
   OutputChunk,
+  // eslint-disable-next-line n/no-extraneous-import
 } from 'rollup';
 import type { PluginOption } from 'vite';
 
 import { EOL } from 'node:os';
 
-import { dateUtil, readPackageJSON } from '@vben/node-utils';
+import { dateUtil, readPackageJSON } from '@tni/node-utils';
 
 /**
  * 用于注入版权信息
@@ -30,15 +31,15 @@ async function viteLicensePlugin(
       handler: (_options: NormalizedOutputOptions, bundle: OutputBundle) => {
         const date = dateUtil().format('YYYY-MM-DD ');
         const copyrightText = `/*!
-  * Vben Admin
+  * Tni Admin
   * Version: ${version}
-  * Author: vben
-  * Copyright (C) 2024 Vben
+  * Author: tni
+  * Copyright (C) 2024 Tni
   * License: MIT License
   * Description: ${description}
   * Date Created: ${date}
   * Homepage: ${homepage}
-  * Contact: ann.vben@gmail.com
+  * Contact: ann.tni@gmail.com
 */
               `.trim();
 

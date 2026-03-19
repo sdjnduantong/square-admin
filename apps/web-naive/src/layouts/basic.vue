@@ -1,22 +1,22 @@
 <script lang="ts" setup>
-import type { NotificationItem } from '@vben/layouts';
+import type { NotificationItem } from '@tni/layouts';
 
 import { computed, ref, watch } from 'vue';
 import { useRouter } from 'vue-router';
 
-import { AuthenticationLoginExpiredModal } from '@vben/common-ui';
-import { VBEN_DOC_URL, VBEN_GITHUB_URL } from '@vben/constants';
-import { useWatermark } from '@vben/hooks';
-import { BookOpenText, CircleHelp, SvgGithubIcon } from '@vben/icons';
+import { AuthenticationLoginExpiredModal } from '@tni/common-ui';
+import { TNI_DOC_URL, TNI_GITHUB_URL } from '@tni/constants';
+import { useWatermark } from '@tni/hooks';
+import { BookOpenText, CircleHelp, SvgGithubIcon } from '@tni/icons';
 import {
   BasicLayout,
   LockScreen,
   Notification,
   UserDropdown,
-} from '@vben/layouts';
-import { preferences } from '@vben/preferences';
-import { useAccessStore, useUserStore } from '@vben/stores';
-import { openWindow } from '@vben/utils';
+} from '@tni/layouts';
+import { preferences } from '@tni/preferences';
+import { useAccessStore, useUserStore } from '@tni/stores';
+import { openWindow } from '@tni/utils';
 
 import { $t } from '#/locales';
 import { useAuthStore } from '#/store';
@@ -71,7 +71,7 @@ const notifications = ref<NotificationItem[]>([
     isRead: false,
     message: '描述信息描述信息描述信息',
     title: '跳转外部链接示例',
-    link: 'https://doc.vben.pro',
+    link: 'https://doc.tni.pro',
   },
 ]);
 
@@ -94,7 +94,7 @@ const menus = computed(() => [
   },
   {
     handler: () => {
-      openWindow(VBEN_DOC_URL, {
+      openWindow(TNI_DOC_URL, {
         target: '_blank',
       });
     },
@@ -103,7 +103,7 @@ const menus = computed(() => [
   },
   {
     handler: () => {
-      openWindow(VBEN_GITHUB_URL, {
+      openWindow(TNI_GITHUB_URL, {
         target: '_blank',
       });
     },
@@ -112,7 +112,7 @@ const menus = computed(() => [
   },
   {
     handler: () => {
-      openWindow(`${VBEN_GITHUB_URL}/issues`, {
+      openWindow(`${TNI_GITHUB_URL}/issues`, {
         target: '_blank',
       });
     },
@@ -177,7 +177,7 @@ watch(
         :avatar
         :menus
         :text="userStore.userInfo?.realName"
-        description="ann.vben@gmail.com"
+        description="ann.tni@gmail.com"
         tag-text="Pro"
         @logout="handleLogout"
       />

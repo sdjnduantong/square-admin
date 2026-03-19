@@ -4,7 +4,7 @@ import type {
   MenuRecordBadgeRaw,
   Recordable,
   ThemeModeType,
-} from '@vben-core/typings';
+} from '@tni-core/typings';
 
 interface MenuProps {
   /**

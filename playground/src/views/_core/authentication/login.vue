@@ -1,11 +1,11 @@
 <script lang="ts" setup>
-import type { VbenFormSchema } from '@vben/common-ui';
-import type { BasicOption, Recordable } from '@vben/types';
+import type { TniFormSchema } from '@tni/common-ui';
+import type { BasicOption, Recordable } from '@tni/types';
 
 import { computed, markRaw, useTemplateRef } from 'vue';
 
-import { AuthenticationLogin, SliderCaptcha, z } from '@vben/common-ui';
-import { $t } from '@vben/locales';
+import { AuthenticationLogin, SliderCaptcha, z } from '@tni/common-ui';
+import { $t } from '@tni/locales';
 
 import { useAuthStore } from '#/store';
 
@@ -16,7 +16,7 @@ const authStore = useAuthStore();
 const MOCK_USER_OPTIONS: BasicOption[] = [
   {
     label: 'Super',
-    value: 'vben',
+    value: 'tni',
   },
   {
     label: 'Admin',
@@ -28,10 +28,10 @@ const MOCK_USER_OPTIONS: BasicOption[] = [
   },
 ];
 
-const formSchema = computed((): VbenFormSchema[] => {
+const formSchema = computed((): TniFormSchema[] => {
   return [
     {
-      component: 'VbenSelect',
+      component: 'TniSelect',
       // componentProps(_values, form) {
       //   return {
       //     'onUpdate:modelValue': (value: string) => {
@@ -59,13 +59,14 @@ const formSchema = computed((): VbenFormSchema[] => {
         .string()
         .min(1, { message: $t('authentication.selectAccount') })
         .optional()
-        .default('vben'),
+        .default('tni'),
     },
     {
-      component: 'VbenInput',
+      component: 'TniInput',
       componentProps: {
         placeholder: $t('authentication.usernameTip'),
       },
+      defaultValue: 'tni',
       dependencies: {
         trigger(values, form) {
           if (values.selectAccount) {
@@ -87,10 +88,11 @@ const formSchema = computed((): VbenFormSchema[] => {
       rules: z.string().min(1, { message: $t('authentication.usernameTip') }),
     },
     {
-      component: 'VbenInputPassword',
+      component: 'TniInputPassword',
       componentProps: {
         placeholder: $t('authentication.password'),
       },
+      defaultValue: '123456',
       fieldName: 'password',
       label: $t('authentication.password'),
       rules: z.string().min(1, { message: $t('authentication.passwordTip') }),

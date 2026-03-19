@@ -1,2 +1,2 @@
-export { default as VbenLoading } from './loading.vue';
-export { default as VbenSpinner } from './spinner.vue';
+export { default as TniLoading } from './loading.vue';
+export { default as TniSpinner } from './spinner.vue';

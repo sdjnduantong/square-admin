@@ -1,11 +1,11 @@
-import type { DeepPartial } from '@vben-core/typings';
+import type { DeepPartial } from '@tni-core/typings';
 
 import type { InitialOptions, Preferences } from './types';
 
 import { markRaw, reactive, readonly, watch } from 'vue';
 
-import { StorageManager } from '@vben-core/shared/cache';
-import { isMacOs, merge } from '@vben-core/shared/utils';
+import { StorageManager } from '@tni-core/shared/cache';
+import { isMacOs, merge } from '@tni-core/shared/utils';
 
 import {
   breakpointsTailwind,
@@ -22,6 +22,34 @@ const STORAGE_KEYS = {
   THEME: 'preferences-theme',
 } as const;
 
+function normalizeLocale(locale: unknown): Preferences['app']['locale'] {
+  void locale;
+  return 'zh-CN';
+}
+
+function sanitizePreferences<
+  T extends DeepPartial<Preferences> | null | Preferences,
+>(preferences: T): T {
+  if (
+    !preferences ||
+    typeof preferences !== 'object' ||
+    !('app' in preferences) ||
+    !preferences.app ||
+    !Reflect.has(preferences.app, 'locale') ||
+    preferences.app.locale === undefined
+  ) {
+    return preferences;
+  }
+
+  return {
+    ...preferences,
+    app: {
+      ...preferences.app,
+      locale: normalizeLocale(preferences.app.locale),
+    },
+  } as T;
+}
+
 class PreferenceManager {
   private cache: StorageManager;
   private debouncedSave: (preference: Preferences) => void;
@@ -32,7 +60,7 @@ class PreferenceManager {
   constructor() {
     this.cache = new StorageManager();
     this.state = reactive<Preferences>(
-      this.loadFromCache() || { ...defaultPreferences },
+      sanitizePreferences(this.loadFromCache()) || { ...defaultPreferences },
     );
     this.debouncedSave = useDebounceFn(
       (preference) => this.saveToCache(preference),
@@ -88,7 +116,7 @@ class PreferenceManager {
     );
 
     // 更新偏好设置
-    this.updatePreferences(mergedPreference);
+    this.updatePreferences(sanitizePreferences(mergedPreference));
 
     // 设置监听器
     this.setupWatcher();
@@ -118,12 +146,14 @@ class PreferenceManager {
    * @param updates - 要更新的偏好设置
    */
   updatePreferences = (updates: DeepPartial<Preferences>) => {
+    const sanitizedUpdates = sanitizePreferences(updates);
+
     // 深度合并更新内容和当前状态
-    const mergedState = merge({}, updates, markRaw(this.state));
+    const mergedState = merge({}, sanitizedUpdates, markRaw(this.state));
     Object.assign(this.state, mergedState);
 
     // 根据更新的值执行更新
-    this.handleUpdates(updates);
+    this.handleUpdates(sanitizedUpdates);
 
     // 保存到缓存
     this.debouncedSave(this.state);
@@ -163,7 +193,9 @@ class PreferenceManager {
    * @returns 缓存的偏好设置，如果不存在则返回 null
    */
   private loadFromCache(): null | Preferences {
-    return this.cache.getItem<Preferences>(STORAGE_KEYS.MAIN);
+    return sanitizePreferences(
+      this.cache.getItem<Preferences>(STORAGE_KEYS.MAIN),
+    );
   }
 
   /**

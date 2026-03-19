@@ -1,15 +1,15 @@
 <script setup lang="ts">
 import type { ButtonVariants } from '../../ui';
-import type { VbenButtonProps } from './button';
+import type { TniButtonProps } from './button';
 
 import { computed, useSlots } from 'vue';
 
-import { cn } from '@vben-core/shared/utils';
+import { cn } from '@tni-core/shared/utils';
 
-import { VbenTooltip } from '../tooltip';
-import VbenButton from './button.vue';
+import { TniTooltip } from '../tooltip';
+import TniButton from './button.vue';
 
-interface Props extends VbenButtonProps {
+interface Props extends TniButtonProps {
   class?: any;
   disabled?: boolean;
   onClick?: () => void;
@@ -33,7 +33,7 @@ const showTooltip = computed(() => !!slots.tooltip || !!props.tooltip);
 </script>
 
 <template>
-  <VbenButton
+  <TniButton
     v-if="!showTooltip"
     :class="cn('rounded-full', props.class)"
     :disabled="disabled"
@@ -42,15 +42,11 @@ const showTooltip = computed(() => !!slots.tooltip || !!props.tooltip);
     @click="onClick"
   >
     <slot></slot>
-  </VbenButton>
+  </TniButton>
 
-  <VbenTooltip
-    v-else
-    :delay-duration="tooltipDelayDuration"
-    :side="tooltipSide"
-  >
+  <TniTooltip v-else :delay-duration="tooltipDelayDuration" :side="tooltipSide">
     <template #trigger>
-      <VbenButton
+      <TniButton
         :class="cn('rounded-full', props.class)"
         :disabled="disabled"
         :variant="variant"
@@ -58,11 +54,11 @@ const showTooltip = computed(() => !!slots.tooltip || !!props.tooltip);
         @click="onClick"
       >
         <slot></slot>
-      </VbenButton>
+      </TniButton>
     </template>
     <slot v-if="slots.tooltip" name="tooltip"> </slot>
     <template v-else>
       {{ tooltip }}
     </template>
-  </VbenTooltip>
+  </TniTooltip>
 </template>

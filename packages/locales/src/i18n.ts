@@ -11,7 +11,7 @@ import type {
 import { unref } from 'vue';
 import { createI18n } from 'vue-i18n';
 
-import { useSimpleLocale } from '@vben-core/composables';
+import { useSimpleLocale } from '@tni-core/composables';
 
 const i18n = createI18n({
   globalInjection: true,
@@ -23,6 +23,7 @@ const i18n = createI18n({
 const modules = import.meta.glob('./langs/**/*.json');
 
 const { setSimpleLocale } = useSimpleLocale();
+const DEFAULT_LOCALE: SupportedLanguagesType = 'zh-CN';
 
 const localesMap = loadLocalesMapFromDir(
   /\.\/langs\/([^/]+)\/(.*)\.json$/,
@@ -100,7 +101,7 @@ function setI18nLanguage(locale: Locale) {
 }
 
 async function setupI18n(app: App, options: LocaleSetupOptions = {}) {
-  const { defaultLocale = 'zh-CN' } = options;
+  const { defaultLocale = DEFAULT_LOCALE } = options;
   // app可以自行扩展一些第三方库和组件库的国际化
   loadMessages = options.loadMessages || (async () => ({}));
   app.use(i18n);
@@ -121,21 +122,23 @@ async function setupI18n(app: App, options: LocaleSetupOptions = {}) {
  * @param lang
  */
 async function loadLocaleMessages(lang: SupportedLanguagesType) {
-  if (unref(i18n.global.locale) === lang) {
-    return setI18nLanguage(lang);
-  }
-  setSimpleLocale(lang);
+  const locale = localesMap[lang] ? lang : DEFAULT_LOCALE;
 
-  const message = await localesMap[lang]?.();
+  if (unref(i18n.global.locale) === locale) {
+    return setI18nLanguage(locale);
+  }
+  setSimpleLocale(locale);
+
+  const message = await localesMap[locale]?.();
 
   if (message?.default) {
-    i18n.global.setLocaleMessage(lang, message.default);
+    i18n.global.setLocaleMessage(locale, message.default);
   }
 
-  const mergeMessage = await loadMessages(lang);
-  i18n.global.mergeLocaleMessage(lang, mergeMessage);
+  const mergeMessage = await loadMessages(locale);
+  i18n.global.mergeLocaleMessage(locale, mergeMessage);
 
-  return setI18nLanguage(lang);
+  return setI18nLanguage(locale);
 }
 
 export {

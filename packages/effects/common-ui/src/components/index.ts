@@ -11,26 +11,26 @@ export * from './page';
 export * from './resize';
 export * from './tippy';
 export * from './tree';
-export * from '@vben-core/form-ui';
-export * from '@vben-core/popup-ui';
+export * from '@tni-core/form-ui';
+export * from '@tni-core/popup-ui';
 
 // 给文档用
 export {
-  VbenAvatar,
-  VbenButton,
-  VbenButtonGroup,
-  VbenCheckbox,
-  VbenCheckButtonGroup,
-  VbenContextMenu,
-  VbenCountToAnimator,
-  VbenFullScreen,
-  VbenInputPassword,
-  VbenLoading,
-  VbenLogo,
-  VbenPinInput,
-  VbenSelect,
-  VbenSpinner,
-} from '@vben-core/shadcn-ui';
+  TniAvatar,
+  TniButton,
+  TniButtonGroup,
+  TniCheckbox,
+  TniCheckButtonGroup,
+  TniContextMenu,
+  TniCountToAnimator,
+  TniFullScreen,
+  TniInputPassword,
+  TniLoading,
+  TniLogo,
+  TniPinInput,
+  TniSelect,
+  TniSpinner,
+} from '@tni-core/shadcn-ui';
 
-export type { FlattenedItem } from '@vben-core/shadcn-ui';
-export { globalShareState } from '@vben-core/shared/global-state';
+export type { FlattenedItem } from '@tni-core/shadcn-ui';
+export { globalShareState } from '@tni-core/shared/global-state';

@@ -2,9 +2,9 @@ import type { SetupVxeTable } from './types';
 
 import { defineComponent, watch } from 'vue';
 
-import { usePreferences } from '@vben/preferences';
+import { usePreferences } from '@tni/preferences';
 
-import { useVbenForm } from '@vben-core/form-ui';
+import { useTniForm } from '@tni-core/form-ui';
 
 import {
   VxeButton,
@@ -34,7 +34,6 @@ import {
   // VxeSwitch,
   // VxeTextarea,
 } from 'vxe-pc-ui';
-import enUS from 'vxe-pc-ui/lib/language/en-US';
 // 导入默认的语言
 import zhCN from 'vxe-pc-ui/lib/language/zh-CN';
 import {
@@ -50,7 +49,7 @@ import { extendsDefaultFormatter } from './extends';
 // 是否加载过
 let isInit = false;
 
-let tableFormFactory: typeof useVbenForm | undefined;
+let tableFormFactory: typeof useTniForm | undefined;
 
 function normalizeVxeLocale<T extends Record<string, any>>(localeModule: T) {
   return (
@@ -62,13 +61,13 @@ function normalizeVxeLocale<T extends Record<string, any>>(localeModule: T) {
   ) as T;
 }
 
-export const useTableForm: typeof useVbenForm = ((...args) => {
+export const useTableForm: typeof useTniForm = ((...args) => {
   if (!tableFormFactory) {
     throw new Error('useTableForm is not initialized');
   }
 
   return tableFormFactory(...args);
-}) as typeof useVbenForm;
+}) as typeof useTniForm;
 
 // 部分组件，如果没注册，vxe-table 会报错，这里实际没用组件，只是为了不报错，同时可以减少打包体积
 const createVirtualComponent = (name = '') => {
@@ -117,17 +116,16 @@ export function initVxeTable() {
   isInit = true;
 }
 
-export function setupVbenVxeTable(setupOptions: SetupVxeTable) {
-  const { configVxeTable, useVbenForm } = setupOptions;
+export function setupTniVxeTable(setupOptions: SetupVxeTable) {
+  const { configVxeTable, useTniForm } = setupOptions;
 
   initVxeTable();
-  tableFormFactory = useVbenForm;
+  tableFormFactory = useTniForm;
 
   const { isDark, locale } = usePreferences();
 
   const localMap = {
     'zh-CN': normalizeVxeLocale(zhCN),
-    'en-US': normalizeVxeLocale(enUS),
   };
 
   watch(

@@ -1,16 +1,16 @@
 <script setup lang="ts">
-import type { VbenButtonProps } from './button';
+import type { TniButtonProps } from './button';
 
 import { computed } from 'vue';
 
-import { LoaderCircle } from '@vben-core/icons';
-import { cn } from '@vben-core/shared/utils';
+import { LoaderCircle } from '@tni-core/icons';
+import { cn } from '@tni-core/shared/utils';
 
 import { Primitive } from 'reka-ui';
 
 import { buttonVariants } from '../../ui';
 
-interface Props extends VbenButtonProps {}
+interface Props extends TniButtonProps {}
 
 const props = withDefaults(defineProps<Props>(), {
   as: 'button',

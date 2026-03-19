@@ -1,20 +1,20 @@
 <script lang="ts" setup>
-import type { VbenFormSchema } from '@vben/common-ui';
-import type { Recordable } from '@vben/types';
+import type { TniFormSchema } from '@tni/common-ui';
+import type { Recordable } from '@tni/types';
 
 import { computed, h, ref } from 'vue';
 
-import { AuthenticationRegister, z } from '@vben/common-ui';
-import { $t } from '@vben/locales';
+import { AuthenticationRegister, z } from '@tni/common-ui';
+import { $t } from '@tni/locales';
 
 defineOptions({ name: 'Register' });
 
 const loading = ref(false);
 
-const formSchema = computed((): VbenFormSchema[] => {
+const formSchema = computed((): TniFormSchema[] => {
   return [
     {
-      component: 'VbenInput',
+      component: 'TniInput',
       componentProps: {
         placeholder: $t('authentication.usernameTip'),
       },
@@ -23,7 +23,7 @@ const formSchema = computed((): VbenFormSchema[] => {
       rules: z.string().min(1, { message: $t('authentication.usernameTip') }),
     },
     {
-      component: 'VbenInputPassword',
+      component: 'TniInputPassword',
       componentProps: {
         passwordStrength: true,
         placeholder: $t('authentication.password'),
@@ -38,7 +38,7 @@ const formSchema = computed((): VbenFormSchema[] => {
       rules: z.string().min(1, { message: $t('authentication.passwordTip') }),
     },
     {
-      component: 'VbenInputPassword',
+      component: 'TniInputPassword',
       componentProps: {
         placeholder: $t('authentication.confirmPassword'),
       },
@@ -58,7 +58,7 @@ const formSchema = computed((): VbenFormSchema[] => {
       label: $t('authentication.confirmPassword'),
     },
     {
-      component: 'VbenCheckbox',
+      component: 'TniCheckbox',
       fieldName: 'agreePolicy',
       renderComponentContent: () => ({
         default: () =>
@@ -67,7 +67,7 @@ const formSchema = computed((): VbenFormSchema[] => {
             h(
               'a',
               {
-                class: 'vben-link ml-1',
+                class: 'tni-link ml-1',
                 href: '',
               },
               `${$t('authentication.privacyPolicy')} & ${$t('authentication.terms')}`,

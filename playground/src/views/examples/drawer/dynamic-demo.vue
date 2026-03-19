@@ -1,9 +1,9 @@
 <script lang="ts" setup>
-import { useVbenDrawer } from '@vben/common-ui';
+import { useTniDrawer } from '@tni/common-ui';
 
 import { Button, message } from 'ant-design-vue';
 
-const [Drawer, drawerApi] = useVbenDrawer({
+const [Drawer, drawerApi] = useTniDrawer({
   onCancel() {
     drawerApi.close();
   },

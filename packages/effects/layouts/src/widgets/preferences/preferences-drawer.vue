@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { SupportedLanguagesType } from '@vben/locales';
+import type { SupportedLanguagesType } from '@tni/locales';
 import type {
   BreadcrumbStyleType,
   BuiltinThemeType,
@@ -10,28 +10,24 @@ import type {
   NavigationStyleType,
   PreferencesButtonPositionType,
   ThemeModeType,
-} from '@vben/types';
+} from '@tni/types';
 
-import type { SegmentedItem } from '@vben-core/shadcn-ui';
+import type { SegmentedItem } from '@tni-core/shadcn-ui';
 
 import { computed, ref } from 'vue';
 
-import { Copy, Pin, PinOff, RotateCw } from '@vben/icons';
-import { $t, loadLocaleMessages } from '@vben/locales';
+import { Copy, Pin, PinOff, RotateCw } from '@tni/icons';
+import { $t, loadLocaleMessages } from '@tni/locales';
 import {
   clearCache,
   preferences,
   resetPreferences,
   usePreferences,
-} from '@vben/preferences';
+} from '@tni/preferences';
 
-import { useVbenDrawer } from '@vben-core/popup-ui';
-import {
-  VbenButton,
-  VbenIconButton,
-  VbenSegmented,
-} from '@vben-core/shadcn-ui';
-import { globalShareState } from '@vben-core/shared/global-state';
+import { useTniDrawer } from '@tni-core/popup-ui';
+import { TniButton, TniIconButton, TniSegmented } from '@tni-core/shadcn-ui';
+import { globalShareState } from '@tni-core/shared/global-state';
 
 import { useClipboard } from '@vueuse/core';
 
@@ -189,7 +185,7 @@ const {
 } = usePreferences();
 const { copy } = useClipboard({ legacy: true });
 
-const [Drawer] = useVbenDrawer();
+const [Drawer] = useTniDrawer();
 
 const activeTab = ref('appearance');
 
@@ -256,7 +252,7 @@ async function handleReset() {
     >
       <template #extra>
         <div class="flex items-center">
-          <VbenIconButton
+          <TniIconButton
             :disabled="!diffPreference"
             :tooltip="$t('preferences.resetTip')"
             class="relative"
@@ -267,8 +263,8 @@ async function handleReset() {
               class="absolute top-0.5 right-0.5 size-2 rounded-sm bg-primary"
             ></span>
             <RotateCw class="size-4" />
-          </VbenIconButton>
-          <VbenIconButton
+          </TniIconButton>
+          <TniIconButton
             :tooltip="
               appEnableStickyPreferencesNavigationBar
                 ? $t('preferences.disableStickyPreferencesNavigationBar')
@@ -286,12 +282,12 @@ async function handleReset() {
               class="size-4"
             />
             <Pin v-else class="size-4" />
-          </VbenIconButton>
+          </TniIconButton>
         </div>
       </template>
 
       <div>
-        <VbenSegmented
+        <TniSegmented
           v-model="activeTab"
           :tabs="tabs"
           :class="{
@@ -466,11 +462,11 @@ async function handleReset() {
               />
             </Block>
           </template>
-        </VbenSegmented>
+        </TniSegmented>
       </div>
 
       <template #footer>
-        <VbenButton
+        <TniButton
           v-if="appEnableCopyPreferences"
           :disabled="!diffPreference"
           class="mx-4 w-full"
@@ -480,8 +476,8 @@ async function handleReset() {
         >
           <Copy class="mr-2 size-3" />
           {{ $t('preferences.copyPreferences') }}
-        </VbenButton>
-        <VbenButton
+        </TniButton>
+        <TniButton
           :disabled="!diffPreference"
           class="mr-4 w-full"
           size="sm"
@@ -489,7 +485,7 @@ async function handleReset() {
           @click="handleClearCache"
         >
           {{ $t('preferences.clearAndLogout') }}
-        </VbenButton>
+        </TniButton>
       </template>
     </Drawer>
   </div>

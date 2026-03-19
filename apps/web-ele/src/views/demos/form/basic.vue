@@ -1,14 +1,14 @@
 <script lang="ts" setup>
 import { h } from 'vue';
 
-import { Page, useVbenDrawer } from '@vben/common-ui';
+import { Page, useTniDrawer } from '@tni/common-ui';
 
 import { ElButton, ElCard, ElCheckbox, ElMessage } from 'element-plus';
 
-import { useVbenForm } from '#/adapter/form';
+import { useTniForm } from '#/adapter/form';
 import { getAllMenusApi } from '#/api';
 
-const [Form, formApi] = useVbenForm({
+const [Form, formApi] = useTniForm({
   commonConfig: {
     // 所有表单项
     componentProps: {
@@ -155,7 +155,7 @@ const [Form, formApi] = useVbenForm({
   ],
 });
 
-const [Drawer, drawerApi] = useVbenDrawer();
+const [Drawer, drawerApi] = useTniDrawer();
 function setFormValues() {
   formApi.setValues({
     string: 'string',

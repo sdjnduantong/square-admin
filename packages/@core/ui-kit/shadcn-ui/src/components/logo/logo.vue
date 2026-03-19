@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed } from 'vue';
 
-import { VbenAvatar } from '../avatar';
+import { TniAvatar } from '../avatar';
 
 interface Props {
   /**
@@ -39,7 +39,7 @@ interface Props {
 }
 
 defineOptions({
-  name: 'VbenLogo',
+  name: 'TniLogo',
 });
 
 const props = withDefaults(defineProps<Props>(), {
@@ -72,7 +72,7 @@ const logoSrc = computed(() => {
       :href="href"
       class="flex h-full items-center gap-2 overflow-hidden px-3 text-lg leading-normal transition-all duration-500"
     >
-      <VbenAvatar
+      <TniAvatar
         v-if="logoSrc"
         :alt="text"
         :src="logoSrc"

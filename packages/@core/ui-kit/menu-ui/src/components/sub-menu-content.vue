@@ -3,9 +3,9 @@ import type { MenuItemProps } from '../types';
 
 import { computed } from 'vue';
 
-import { useNamespace } from '@vben-core/composables';
-import { ChevronDown, ChevronRight } from '@vben-core/icons';
-import { VbenIcon } from '@vben-core/shadcn-ui';
+import { useNamespace } from '@tni-core/composables';
+import { ChevronDown, ChevronRight } from '@tni-core/icons';
+import { TniIcon } from '@tni-core/shadcn-ui';
 
 import { useMenuContext } from '../hooks';
 
@@ -82,7 +82,7 @@ const iconArrowStyle = computed(() => {
   >
     <slot></slot>
 
-    <VbenIcon
+    <TniIcon
       v-if="!isMenuMore"
       :class="nsMenu.e('icon')"
       :icon="icon"

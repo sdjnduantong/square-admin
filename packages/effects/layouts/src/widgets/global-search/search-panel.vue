@@ -1,15 +1,15 @@
 <script setup lang="ts">
-import type { MenuRecordRaw } from '@vben/types';
+import type { MenuRecordRaw } from '@tni/types';
 
 import { nextTick, onMounted, ref, shallowRef, watch } from 'vue';
 import { useRouter } from 'vue-router';
 
-import { SearchX, X } from '@vben/icons';
-import { $t } from '@vben/locales';
-import { mapTree, traverseTreeValues, uniqueByField } from '@vben/utils';
+import { SearchX, X } from '@tni/icons';
+import { $t } from '@tni/locales';
+import { mapTree, traverseTreeValues, uniqueByField } from '@tni/utils';
 
-import { VbenIcon, VbenScrollbar } from '@vben-core/shadcn-ui';
-import { isHttpUrl } from '@vben-core/shared/utils';
+import { TniIcon, TniScrollbar } from '@tni-core/shadcn-ui';
+import { isHttpUrl } from '@tni-core/shared/utils';
 
 import { onKeyStroke, useLocalStorage, useThrottleFn } from '@vueuse/core';
 
@@ -222,7 +222,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <VbenScrollbar>
+  <TniScrollbar>
     <div class="flex! h-full justify-center px-2 sm:max-h-112.5">
       <!-- 无搜索结果 -->
       <div
@@ -268,7 +268,7 @@ onMounted(() => {
           @click="handleEnter"
           @mouseenter="handleMouseenter"
         >
-          <VbenIcon :icon="item.icon" class="mr-2 size-5 shrink-0" fallback />
+          <TniIcon :icon="item.icon" class="mr-2 size-5 shrink-0" fallback />
 
           <span class="flex-1">{{ item.name }}</span>
           <div
@@ -280,5 +280,5 @@ onMounted(() => {
         </li>
       </ul>
     </div>
-  </VbenScrollbar>
+  </TniScrollbar>
 </template>

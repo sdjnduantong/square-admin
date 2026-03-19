@@ -1,17 +1,17 @@
 <script lang="ts" setup>
 import { computed } from 'vue';
 
-import { Settings } from '@vben/icons';
-import { $t, loadLocaleMessages } from '@vben/locales';
-import { preferences, updatePreferences } from '@vben/preferences';
-import { capitalizeFirstLetter } from '@vben/utils';
+import { Settings } from '@tni/icons';
+import { $t, loadLocaleMessages } from '@tni/locales';
+import { preferences, updatePreferences } from '@tni/preferences';
+import { capitalizeFirstLetter } from '@tni/utils';
 
-import { useVbenDrawer } from '@vben-core/popup-ui';
-import { VbenButton } from '@vben-core/shadcn-ui';
+import { useTniDrawer } from '@tni-core/popup-ui';
+import { TniButton } from '@tni-core/shadcn-ui';
 
 import PreferencesDrawer from './preferences-drawer.vue';
 
-const [Drawer, drawerApi] = useVbenDrawer({
+const [Drawer, drawerApi] = useTniDrawer({
   connectedComponent: PreferencesDrawer,
 });
 
@@ -60,12 +60,12 @@ const listen = computed(() => {
 
     <div @click="() => drawerApi.open()">
       <slot>
-        <VbenButton
+        <TniButton
           :title="$t('preferences.title')"
           class="flex-col-center size-10 cursor-pointer rounded-l-lg rounded-r-none border-none bg-primary"
         >
           <Settings class="size-5" />
-        </VbenButton>
+        </TniButton>
       </slot>
     </div>
   </div>

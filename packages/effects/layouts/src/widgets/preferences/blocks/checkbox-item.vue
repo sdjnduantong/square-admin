@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import type { SelectOption } from '@vben/types';
+import type { SelectOption } from '@tni/types';
 
 import { useSlots } from 'vue';
 
-import { CircleHelp } from '@vben/icons';
+import { CircleHelp } from '@tni/icons';
 
-import { VbenCheckButtonGroup, VbenTooltip } from '@vben-core/shadcn-ui';
+import { TniCheckButtonGroup, TniTooltip } from '@tni-core/shadcn-ui';
 
 defineOptions({
   name: 'PreferenceCheckboxItem',
@@ -44,14 +44,14 @@ const slots = useSlots();
     <span class="flex items-center text-sm">
       <slot></slot>
 
-      <VbenTooltip v-if="slots.tip" side="bottom">
+      <TniTooltip v-if="slots.tip" side="bottom">
         <template #trigger>
           <CircleHelp class="ml-1 size-3 cursor-help" />
         </template>
         <slot name="tip"></slot>
-      </VbenTooltip>
+      </TniTooltip>
     </span>
-    <VbenCheckButtonGroup
+    <TniCheckButtonGroup
       v-model="inputValue"
       class="h-8 w-41.25"
       :options="items"

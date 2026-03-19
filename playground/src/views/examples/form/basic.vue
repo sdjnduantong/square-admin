@@ -3,13 +3,13 @@ import type { UploadFile } from 'ant-design-vue';
 
 import { h, ref, toRaw } from 'vue';
 
-import { Page } from '@vben/common-ui';
+import { Page } from '@tni/common-ui';
 
 import { useDebounceFn } from '@vueuse/core';
 import { Button, Card, message, Spin, Tag } from 'ant-design-vue';
 import dayjs from 'dayjs';
 
-import { useVbenForm, z } from '#/adapter/form';
+import { useTniForm, z } from '#/adapter/form';
 import { getAllMenusApi } from '#/api';
 import { upload_file } from '#/api/examples/upload';
 import { $t } from '#/locales';
@@ -33,7 +33,7 @@ function fetchRemoteOptions({ keyword = '选项' }: Record<string, any>) {
   });
 }
 
-const [BaseForm, baseFormApi] = useVbenForm({
+const [BaseForm, baseFormApi] = useTniForm({
   // 所有表单项共用，可单独在表单内覆盖
   commonConfig: {
     // 在label后显示一个冒号
@@ -462,7 +462,7 @@ function handleSetFormValue() {
         name: 'example.png',
         status: 'done',
         uid: '-1',
-        url: 'https://unpkg.com/@vbenjs/static-source@0.1.7/source/logo-v1.webp',
+        url: 'https://unpkg.com/@tnijs/static-source@0.1.7/source/logo-v1.webp',
       },
     ],
     mentions: '@afc163',
@@ -497,7 +497,7 @@ function handleSetFormValue() {
       </div>
     </template>
     <template #extra>
-      <DocButton class="mb-2" path="/components/common-ui/vben-form" />
+      <DocButton class="mb-2" path="/components/common-ui/tni-form" />
     </template>
     <Card title="基础示例">
       <template #extra>

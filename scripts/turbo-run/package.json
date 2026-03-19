@@ -1,5 +1,5 @@
 {
-  "name": "@vben/turbo-run",
+  "name": "@tni/turbo-run",
   "version": "5.7.0",
   "private": true,
   "license": "MIT",
@@ -23,7 +23,19 @@
   },
   "dependencies": {
     "@clack/prompts": "catalog:",
-    "@vben/node-utils": "workspace:*",
+    "@tni/node-utils": "workspace:*",
     "cac": "catalog:"
+  },
+  "homepage": "https://github.com/sdjnduantong/square-admin.git",
+  "bugs": "https://github.com/sdjnduantong/square-admin/issues",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sdjnduantong/square-admin.git",
+    "directory": "scripts/turbo-run"
+  },
+  "author": {
+    "name": "duantong",
+    "email": "2664787866@qq.com",
+    "url": "https://github.com/sdjnduantong"
   }
 }

@@ -60,7 +60,7 @@ interface PrintPluginOptions {
 interface NitroMockPluginOptions {
   /**
    * Mock 服务器包名
-   * @default '@vbenjs/nitro-mock'
+   * @default '@tnijs/nitro-mock'
    */
   mockServerPackage?: string;
 
@@ -332,7 +332,7 @@ type DefineLibraryOptions = (config?: ConfigEnv) => Promise<{
  */
 type DefineConfig = DefineApplicationOptions | DefineLibraryOptions;
 
-type VbenViteConfig = Promise<UserConfig> | UserConfig | UserConfigFnPromise;
+type TniViteConfig = Promise<UserConfig> | UserConfig | UserConfigFnPromise;
 
 export type {
   ApplicationPluginOptions,
@@ -347,5 +347,5 @@ export type {
   LibraryPluginOptions,
   NitroMockPluginOptions,
   PrintPluginOptions,
-  VbenViteConfig,
+  TniViteConfig,
 };

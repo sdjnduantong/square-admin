@@ -1,11 +1,11 @@
 {
-  "name": "@vben/locales",
+  "name": "@tni/locales",
   "version": "5.7.0",
-  "homepage": "https://github.com/vbenjs/vue-vben-admin",
-  "bugs": "https://github.com/vbenjs/vue-vben-admin/issues",
+  "homepage": "https://github.com/sdjnduantong/square-admin.git",
+  "bugs": "https://github.com/sdjnduantong/square-admin/issues",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/vbenjs/vue-vben-admin.git",
+    "url": "git+https://github.com/sdjnduantong/square-admin.git",
     "directory": "packages/locales"
   },
   "license": "MIT",
@@ -21,8 +21,13 @@
   },
   "dependencies": {
     "@intlify/core-base": "catalog:",
-    "@vben-core/composables": "workspace:*",
+    "@tni-core/composables": "workspace:*",
     "vue": "catalog:",
     "vue-i18n": "catalog:"
+  },
+  "author": {
+    "name": "duantong",
+    "email": "2664787866@qq.com",
+    "url": "https://github.com/sdjnduantong"
   }
 }

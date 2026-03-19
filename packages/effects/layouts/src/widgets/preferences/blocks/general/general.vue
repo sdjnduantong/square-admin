@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { SUPPORT_LANGUAGES } from '@vben/constants';
-import { $t } from '@vben/locales';
+import { SUPPORT_LANGUAGES } from '@tni/constants';
+import { $t } from '@tni/locales';
 
 import InputItem from '../input-item.vue';
 import SelectItem from '../select-item.vue';
@@ -21,7 +21,11 @@ const appEnableCopyPreferences = defineModel<boolean>(
 </script>
 
 <template>
-  <SelectItem v-model="appLocale" :items="SUPPORT_LANGUAGES">
+  <SelectItem
+    v-if="SUPPORT_LANGUAGES.length > 1"
+    v-model="appLocale"
+    :items="SUPPORT_LANGUAGES"
+  >
     {{ $t('preferences.language') }}
   </SelectItem>
   <SwitchItem v-model="appDynamicTitle">

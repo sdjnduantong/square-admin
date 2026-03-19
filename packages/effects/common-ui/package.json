@@ -1,11 +1,11 @@
 {
-  "name": "@vben/common-ui",
+  "name": "@tni/common-ui",
   "version": "5.7.0",
-  "homepage": "https://github.com/vbenjs/vue-vben-admin",
-  "bugs": "https://github.com/vbenjs/vue-vben-admin/issues",
+  "homepage": "https://github.com/sdjnduantong/square-admin.git",
+  "bugs": "https://github.com/sdjnduantong/square-admin/issues",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/vbenjs/vue-vben-admin.git",
+    "url": "git+https://github.com/sdjnduantong/square-admin.git",
     "directory": "packages/effects/common-ui"
   },
   "license": "MIT",
@@ -28,17 +28,17 @@
     }
   },
   "dependencies": {
-    "@vben-core/design": "workspace:*",
-    "@vben-core/form-ui": "workspace:*",
-    "@vben-core/popup-ui": "workspace:*",
-    "@vben-core/preferences": "workspace:*",
-    "@vben-core/shadcn-ui": "workspace:*",
-    "@vben-core/shared": "workspace:*",
-    "@vben/constants": "workspace:*",
-    "@vben/hooks": "workspace:*",
-    "@vben/icons": "workspace:*",
-    "@vben/locales": "workspace:*",
-    "@vben/types": "workspace:*",
+    "@tni-core/design": "workspace:*",
+    "@tni-core/form-ui": "workspace:*",
+    "@tni-core/popup-ui": "workspace:*",
+    "@tni-core/preferences": "workspace:*",
+    "@tni-core/shadcn-ui": "workspace:*",
+    "@tni-core/shared": "workspace:*",
+    "@tni/constants": "workspace:*",
+    "@tni/hooks": "workspace:*",
+    "@tni/icons": "workspace:*",
+    "@tni/locales": "workspace:*",
+    "@tni/types": "workspace:*",
     "@vueuse/core": "catalog:",
     "@vueuse/integrations": "catalog:",
     "json-bigint": "catalog:",
@@ -52,5 +52,10 @@
   "devDependencies": {
     "@types/json-bigint": "catalog:",
     "@types/qrcode": "catalog:"
+  },
+  "author": {
+    "name": "duantong",
+    "email": "2664787866@qq.com",
+    "url": "https://github.com/sdjnduantong"
   }
 }

@@ -3,13 +3,9 @@ import type { AboutProps, DescriptionItem } from './about';
 
 import { h } from 'vue';
 
-import {
-  VBEN_DOC_URL,
-  VBEN_GITHUB_URL,
-  VBEN_PREVIEW_URL,
-} from '@vben/constants';
+import { TNI_DOC_URL, TNI_GITHUB_URL, VBEN_PREVIEW_URL } from '@tni/constants';
 
-import { VbenRenderContent } from '@vben-core/shadcn-ui';
+import { TniRenderContent } from '@tni-core/shadcn-ui';
 
 import { Page } from '../../components';
 
@@ -22,7 +18,7 @@ defineOptions({
 withDefaults(defineProps<Props>(), {
   description:
     '是一个现代化开箱即用的中后台解决方案，采用最新的技术栈，包括 Vue 3.0、Vite、TailwindCSS 和 TypeScript 等前沿技术，代码规范严谨，提供丰富的配置选项，旨在为中大型项目的开发提供现成的开箱即用解决方案及丰富的示例，同时，它也是学习和深入前端技术的一个极佳示例。',
-  name: 'Vben Admin',
+  name: 'Tni Admin',
   title: '关于项目',
 });
 
@@ -45,7 +41,7 @@ declare global {
 const renderLink = (href: string, text: string) =>
   h(
     'a',
-    { href, target: '_blank', class: 'vben-link' },
+    { href, target: '_blank', class: 'tni-link' },
     { default: () => text },
   );
 
@@ -62,7 +58,7 @@ const {
   // vite inject-metadata 插件注入的全局变量
 } = __VBEN_ADMIN_METADATA__ || {};
 
-const vbenDescriptionItems: DescriptionItem[] = [
+const tniDescriptionItems: DescriptionItem[] = [
   {
     content: version,
     title: '版本号',
@@ -80,7 +76,7 @@ const vbenDescriptionItems: DescriptionItem[] = [
     title: '主页',
   },
   {
-    content: renderLink(VBEN_DOC_URL, '点击查看'),
+    content: renderLink(TNI_DOC_URL, '点击查看'),
     title: '文档地址',
   },
   {
@@ -88,7 +84,7 @@ const vbenDescriptionItems: DescriptionItem[] = [
     title: '预览地址',
   },
   {
-    content: renderLink(VBEN_GITHUB_URL, '点击查看'),
+    content: renderLink(TNI_GITHUB_URL, '点击查看'),
     title: 'Github',
   },
   {
@@ -115,7 +111,7 @@ const devDependenciesItems = Object.keys(devDependencies).map((key) => ({
   <Page :title="title">
     <template #description>
       <p class="mt-3 text-sm/6 text-foreground">
-        <a :href="VBEN_GITHUB_URL" class="vben-link" target="_blank">
+        <a :href="TNI_GITHUB_URL" class="tni-link" target="_blank">
           {{ name }}
         </a>
         {{ description }}
@@ -127,13 +123,13 @@ const devDependenciesItems = Object.keys(devDependencies).map((key) => ({
       </div>
       <div class="mt-4">
         <dl class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-          <template v-for="item in vbenDescriptionItems" :key="item.title">
+          <template v-for="item in tniDescriptionItems" :key="item.title">
             <div class="border-t border-border px-4 py-6 sm:col-span-1 sm:px-0">
               <dt class="text-sm/6 font-medium text-foreground">
                 {{ item.title }}
               </dt>
               <dd class="mt-1 text-sm/6 text-foreground sm:mt-2">
-                <VbenRenderContent :content="item.content" />
+                <TniRenderContent :content="item.content" />
               </dd>
             </div>
           </template>
@@ -153,7 +149,7 @@ const devDependenciesItems = Object.keys(devDependencies).map((key) => ({
                 {{ item.title }}
               </dt>
               <dd class="mt-1 text-sm text-foreground/80 sm:mt-2">
-                <VbenRenderContent :content="item.content" />
+                <TniRenderContent :content="item.content" />
               </dd>
             </div>
           </template>
@@ -172,7 +168,7 @@ const devDependenciesItems = Object.keys(devDependencies).map((key) => ({
                 {{ item.title }}
               </dt>
               <dd class="mt-1 text-sm text-foreground/80 sm:mt-2">
-                <VbenRenderContent :content="item.content" />
+                <TniRenderContent :content="item.content" />
               </dd>
             </div>
           </template>
